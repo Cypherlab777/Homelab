@@ -30,6 +30,7 @@ Its main responsibilities will include:
 - Providing management access through a dedicated management VLAN
 - Connecting to the future Layer 3 / firewall infrastructure
 - Serving as a platform for CCNA review and future CCNP switching practice
+
 ---
 
 ## Initial inspection
@@ -38,6 +39,7 @@ Its main responsibilities will include:
 - Power-on test
 - Port LEDs verification
 - Console access test
+
 ---
 
 ## Software
@@ -57,6 +59,7 @@ show inventory
 show interfaces status
 show vlan brief
 show environment
+
 ```
 
 The switch arrived in its factory default configuration.
