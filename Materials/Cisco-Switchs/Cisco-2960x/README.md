@@ -53,13 +53,11 @@ IOS : 15.2(7)E2
 Commands used:
 
 ```text
-
 show version
 show inventory
 show interfaces status
 show vlan brief
 show environment
-
 ```
 
 The switch arrived in its factory default configuration.
