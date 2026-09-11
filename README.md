@@ -16,38 +16,32 @@ The homelab will also serve as a practical platform for future CCNP and Security
 
 ## 🚧 Current status
 
-The project is currently in its first deployment phase.
+The homelab is currently in the early deployment stage.
 
 ### Completed
 
-- ✅ First Cisco Catalyst 2960-X received
-- ✅ Physical inspection completed
-- ✅ Console access established through PuTTY
-- ✅ IOS version verified
-- ✅ Factory-default configuration confirmed
-- ✅ Physical interfaces individually tested
-- ✅ Initial hardware documentation created
-- ✅ First switch added to the repository documentation
+- ✅ First Cisco Catalyst 2960-X acquired and validated
+- ✅ Initial hardware inspection and console access completed
+- ✅ IOS and factory-default configuration verified
+- ✅ First device documentation published
 
 ### In progress
 
-- 🔄 Initial switch configuration
-- 🔄 Management VLAN design
-- 🔄 Repository documentation
-- 🔄 Physical network design
-- 🔄 Homelab topology planning
+- 🔄 Cisco lab deployment
+- 🔄 Physical network and VLAN design
+- 🔄 Repository structure and documentation
+- 🔄 Homelab architecture planning
 
-### Next steps
+### Upcoming
 
 - ⬜ Second Cisco Catalyst 2960-X
-- ⬜ Cisco Catalyst 3650 Layer 3 switches x2
-- ⬜ MikroTik integration
-- ⬜ pfSense deployment
-- ⬜ Rack installation
-- ⬜ Full VLAN segmentation
-- ⬜ Proxmox virtualization host
-- ⬜ Windows Server / Active Directory integration with the physical network
-
+- ⬜ Cisco Catalyst 3650 switches
+- ⬜ MikroTik central switch
+- ⬜ pfSense firewall/router
+- ⬜ 15U rack deployment
+- ⬜ VLAN segmentation and inter-VLAN routing
+- ⬜ Proxmox virtualization platform
+- ⬜ Integration of Windows Server, Active Directory, and Linux systems
 ---
 
 ## 🎯 Objectives
