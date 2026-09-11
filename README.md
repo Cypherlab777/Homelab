@@ -140,70 +140,17 @@ Smaller accessories such as console cables, patch cables, keystone modules, and 
 
 ## 🧱 Cisco lab
 
-The Cisco lab is intended to provide a physical environment for practicing technologies previously studied in simulation.
+The Cisco lab provides a physical environment for practicing and extending the networking concepts studied through CCNA and future CCNP work.
 
-Planned areas include:
+Main areas:
 
-### Switching and Layer 2
-
-- VLAN design and implementation
-- 802.1Q trunking
-- Access and trunk port configuration
-- Rapid PVST+
-- Spanning Tree root bridge design
-- EtherChannel
-- Layer 2 redundancy
-- Physical cabling and interface management
-
-### Layer 2 security
-
-- Port Security
-- DHCP Snooping
-- Dynamic ARP Inspection
-- BPDU Guard
-- Secure management access
-
-### Management
-
-- Dedicated management VLANs
-- SSH management
-- Device hardening
-- Interface and hardware verification
-- Logging and operational checks
-
-### Layer 3 networking
-
-- Inter-VLAN routing
-- Layer 3 switching
-- Static routing
-- Dynamic routing protocols
-- IPv4 routing
-- IPv6 routing
-
-### First-hop redundancy
-
-- HSRP for IPv4
-- HSRPv2 for IPv6
-- Active/standby gateway redundancy
-- Gateway failover verification
-
-### Network architecture
-
-- Collapsed-core design
-- Access / distribution roles
-- Layer 2 and Layer 3 redundancy
-- Segmented network design
-- Multi-VLAN enterprise-style topology
-
-### Troubleshooting and validation
-
-- Structured troubleshooting methodology
-- Real hardware verification
-- Interface and link troubleshooting
-- VLAN and trunk troubleshooting
-- STP troubleshooting
-- Routing troubleshooting
-- Redundancy and failover testing
+- Layer 2 switching: VLANs, trunking, STP/RPVST+, EtherChannel
+- Layer 2 security: Port Security, DHCP Snooping, DAI, BPDU Guard
+- Layer 3 networking: inter-VLAN routing, static and dynamic routing, IPv4/IPv6
+- First-hop redundancy: HSRP for IPv4 and HSRPv2 for IPv6
+- Network architecture: access/distribution roles and collapsed-core design
+- Management and hardening: SSH, management VLANs, device security
+- Troubleshooting, validation, redundancy, and failover testing
 
 The long-term objective is to reuse the same physical infrastructure for more advanced CCNP-oriented labs.
 
@@ -211,98 +158,17 @@ The long-term objective is to reuse the same physical infrastructure for more ad
 
 ## 🖥️ Virtualization and systems lab
 
-The virtualization and systems lab will be used to deploy, integrate, and troubleshoot Windows and Linux environments inside the homelab.
+The virtualization and systems lab is used to deploy, integrate, and troubleshoot Windows and Linux environments.
 
-### Virtualization
+Main areas:
 
-- Proxmox deployment and administration
-- Virtual machine provisioning
-- Virtual networking
-- Resource allocation and management
-- Snapshots and backups
-- Integration with the physical network infrastructure
-
-### Windows Server
-
-- Windows Server deployment
-- Server role installation and administration
-- Active Directory Domain Services
-- Group Policy
-- DNS
-- DHCP
-- File and storage services
-- User and computer management
-- Authentication and authorization
-
-### Windows clients
-
-- Windows client deployment
-- Domain join
-- User profile management
-- Group Policy application
-- DNS and DHCP client behavior
-- Authentication troubleshooting
-- Client/server connectivity testing
-
-### Linux systems
-
-- Linux server deployment
-- Network configuration
-- User and permission management
-- SSH administration
-- DNS and service integration
-- Basic server hardening
-- Integration with Active Directory and the physical network
-
-### Identity and access management
-
-- Active Directory users, groups, and organizational units
-- Authentication
-- Authorization
-- Group Policy
-- Administrative delegation
-- Domain services troubleshooting
-
-### Network services
-
-- DNS
-- DHCP
-- File services
-- Name resolution
-- IP address allocation
-- Service availability testing
-- Integration with VLANs and routing
-
-### Logging and monitoring
-
-- Windows Event Viewer
-- Centralized logging
-- System monitoring
-- Service monitoring
-- Network monitoring
-- Basic alerting
-- Troubleshooting from logs and events
-
-### Security
-
-- System hardening
-- Access control
-- Firewall rules
-- Least privilege principles
-- Secure remote administration
-- Authentication security
-- Security logging
-- Security+-oriented labs
-
-### Integration and troubleshooting
-
-- Integration with the physical Cisco network
-- VLAN-based server segmentation
-- Client/server connectivity
-- DNS and DHCP troubleshooting
-- Authentication troubleshooting
-- Domain connectivity issues
-- Network path verification
+- Proxmox virtualization and virtual networking
+- Windows Server and Active Directory
+- Windows client integration and Group Policy
+- Linux server administration
+- DNS, DHCP, file services, and authentication
+- Logging, monitoring, backups, and security
+- Integration with the physical VLAN infrastructure
 - Structured systems troubleshooting
 
 A dedicated Proxmox host is planned.
@@ -469,21 +335,11 @@ Repository rules include:
 
 Future areas include:
 
-- Advanced firewall policies
-- VPN
-- AAA
-- Centralized authentication
-- Network monitoring
-- Syslog
-- SNMP
-- Automation
-- Advanced routing
-- High availability
-- Redundancy
-- Network hardening
-- Remote administration
-- CCNP-oriented labs
-- Security+-oriented labs
+- Advanced routing, redundancy, and high availability
+- VPN, AAA, and centralized authentication
+- Network monitoring, Syslog, and SNMP
+- Network hardening and advanced firewall policies
+- Automation, CCNP-oriented labs, and Security+-oriented labs
 
 ---
 
