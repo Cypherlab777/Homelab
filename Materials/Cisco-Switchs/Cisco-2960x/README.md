@@ -14,6 +14,7 @@ The Cisco Catalyst 2960-X was selected to practice and reinforce the switching c
 It provides a physical environment for working with VLANs, trunking, Spanning Tree Protocol, EtherChannel, port security, DHCP Snooping, Dynamic ARP Inspection, SSH management and general Layer 2 troubleshooting.
 
 Using real Cisco hardware also allows me to become familiar with physical deployment, console access, cabling, interface status, hardware inspection and operational troubleshooting beyond network simulation tools.
+
 ---
 
 ## Role in the homelab
