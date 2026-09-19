@@ -62,44 +62,64 @@ The main objectives of this homelab are to:
 - Support future CCNP and Security+ studies
 
 ---
-
-## 🏗️ Target architecture
+## 🗺️ Target architecture
 
 The homelab is being built progressively around the following target architecture:
 
-```text
-                    Internet
-                       │
-                 VOO ISP modem
-                  (bridge mode)
-                       │
-                    pfSense
-          routing / firewall / NAT
-                       │
-                    MikroTik
-            central Layer 2 switching
-                       │
-        ┌──────────────┼──────────────┐
-        │              │              │
-   Family network   Cisco lab   Virtualization lab
-                        │              │
-                 Cisco switches     Proxmox
-                        │              │
-                  CCNA / CCNP     Windows Server
-                  networking       Active Directory
-                  laboratories     Linux / Security+
+```mermaid
+flowchart TD
+
+    INTERNET["Internet"]
+
+    VOO["VOO ISP Modem<br/>Bridge Mode"]
+
+    PFSENSE["pfSense Firewall<br/>Mini PC Intel N300<br/>8 GB RAM / 128 GB NVMe<br/>6 × 2.5 GbE"]
+
+    GRANDSTREAM["Grandstream GWN7822P<br/>Central Managed PoE Switch"]
+
+    FAMILY["Family Network"]
+
+    CISCOLAB["Cisco Networking Lab"]
+
+    VIRTUALIZATION["Virtualization Lab<br/>Future Proxmox Server"]
+
+    L2["2 × Cisco Catalyst 2960-X<br/>WS-C2960X-24TS-L<br/>Layer 2 Switching"]
+
+    L3["2 × Cisco Catalyst 3850<br/>WS-C3850-24T-E<br/>Layer 3 Switching"]
+
+    NETWORKLAB["Networking Laboratories<br/>VLANs / Trunks / STP / EtherChannel<br/>HSRP / OSPF / ACLs / DHCP Snooping / DAI"]
+
+    SERVERLAB["Server & Security Laboratories<br/>Windows Server / Active Directory<br/>Linux / Security+"]
+
+    INTERNET --> VOO
+    VOO --> PFSENSE
+    PFSENSE --> GRANDSTREAM
+
+    GRANDSTREAM --> FAMILY
+    GRANDSTREAM --> CISCOLAB
+    GRANDSTREAM --> VIRTUALIZATION
+
+    CISCOLAB --> L2
+    CISCOLAB --> L3
+
+    L2 --> NETWORKLAB
+    L3 --> NETWORKLAB
+
+    VIRTUALIZATION --> SERVERLAB
 ```
 
 ### Component roles
 
-- **VOO ISP modem** — Internet access, planned bridge mode
-- **pfSense** — main router, firewall, NAT, inter-VLAN routing, and Internet gateway
-- **MikroTik** — central Layer 2 switching and VLAN transport
-- **Cisco lab** — physical Cisco switching and routing practice
-- **Proxmox lab** — virtualization platform for Windows Server, Active Directory, Linux, and security labs
+| Component | Role |
+|---|---|
+| **VOO ISP Modem** | Internet access, configured in bridge mode so pfSense can act as the main router and firewall |
+| **pfSense Mini PC** | Main firewall, routing, NAT, VLAN gateways and network security |
+| **Grandstream GWN7822P** | Central managed switch connecting the family network, Cisco lab and future virtualization infrastructure |
+| **2 × Cisco Catalyst 2960-X WS-C2960X-24TS-L** | Layer 2 laboratory switches used for VLANs, trunks, STP, EtherChannel, Port Security, DHCP Snooping and DAI |
+| **2 × Cisco Catalyst 3850 WS-C3850-24T-E** | Layer 3 laboratory switches used for inter-VLAN routing, HSRP, OSPF, ACLs and advanced switching/routing labs |
+| **Future Proxmox Server** | Virtualization platform for Windows Server, Active Directory, Linux, Security+ and other infrastructure laboratories |
 
-The exact architecture will evolve as the project grows and design decisions are validated through deployment.
-
+> The architecture will progressively evolve as additional servers, virtual machines, clients and network services are added.
 ---
 
 ## 🌐 Planned network segmentation
