@@ -36,7 +36,7 @@ The homelab is currently in the early deployment stage.
 
 - ⬜ Second Cisco Catalyst 2960-X
 - ⬜ Cisco Catalyst 3650 switches
-- ⬜ MikroTik central switch
+- ⬜ Grandstream GWN7822P
 - ⬜ pfSense firewall/router
 - ⬜ 15U rack deployment
 - ⬜ VLAN segmentation and inter-VLAN routing
@@ -149,7 +149,7 @@ Each major device has its own documentation folder under `Materials/`.
 | ⬜ | Cisco Catalyst WS-C2960X-24TS-L #2 | Layer 2 access switch |
 | ⬜ | Cisco Catalyst 3650 #1 | Layer 3 distribution / collapsed-core |
 | ⬜ | Cisco Catalyst 3650 #2 | Layer 3 distribution / collapsed-core |
-| ⬜ | MikroTik switch | Central VLAN switching |
+| ⬜ | Grandstream GWN7822P | Central VLAN switching |
 | ⬜ | Mini PC — pfSense | Firewall / router |
 | ⬜ | Mini PC — Proxmox | Virtualization host |
 | ⬜ | 15U rack | Physical infrastructure |
@@ -299,7 +299,7 @@ Repository rules include:
     │   │   └── Cisco-2960X-01/
     │   │       ├── README.md
     │   │       └── images/
-    │   ├── MikroTik/
+    │   ├── Grandstream/
     │   ├── pfSense/
     │   ├── Proxmox/
     │   ├── Rack/
@@ -312,7 +312,7 @@ Repository rules include:
     ├── Configs/
     │   ├── Cisco/
     │   ├── pfSense/
-    │   └── MikroTik/
+    │   └── Grandstream/
     │
     ├── Diagrams/
     │   ├── Physical/
@@ -328,7 +328,7 @@ Repository rules include:
 - [ ] Second Cisco Catalyst 2960-X acquired
 - [ ] First Cisco Catalyst 3650 switches acquired
 - [ ] Second Cisco Catalyst 3650 switches acquired
-- [ ] MikroTik switch acquired
+- [ ] Grandstream Switch acquired
 - [ ] pfSense mini PC acquired
 - [ ] 15U rack installed
 - [ ] Core network architecture deployed
@@ -360,26 +360,6 @@ Future areas include:
 - Network monitoring, Syslog, and SNMP
 - Network hardening and advanced firewall policies
 - Automation, CCNP-oriented labs, and Security+-oriented labs
-
----
-
-## 📸 Project evolution
-
-The physical and logical evolution of the homelab is documented over time.
-
-Device photos are stored in the corresponding:
-
-`Materials/<device>/images/`
-
-Network diagrams are stored under:
-
-    Diagrams/
-    ├── Physical/
-    └── Logical/
-
-A chronological summary of major changes is maintained in:
-
-`CHANGELOG.md`
 
 ---
 
