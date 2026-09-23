@@ -116,8 +116,6 @@ flowchart TD
 | **2 × Cisco Catalyst 3850 WS-C3850-24T-E** | Layer 3 laboratory switches used for inter-VLAN routing, HSRP, OSPF, ACLs and advanced switching/routing labs |
 | **Future Proxmox Server** | Virtualization platform for Windows Server, Active Directory, Linux, Security+ and other infrastructure laboratories |
 
-pfSense will handle routing and firewall policies between the main homelab segments, while the Catalyst 3850 switches will provide Layer 3 routing within the isolated Cisco lab environment.
-
 > The architecture will progressively evolve as additional servers, virtual machines, clients and network services are added.
 ---
 
@@ -132,7 +130,7 @@ The initial segmentation plan is:
 | VLAN 100 | Virtualization / servers |
 | Management VLAN | Network device administration |
 
-Inter-VLAN routing and firewall policies will be handled by pfSense.
+pfSense will handle routing and firewall policies between the main homelab segments, while the Catalyst 3850 switches will provide Layer 3 routing within the isolated Cisco lab environment.
 
 The main goal is to isolate the lab environment from the family network while still allowing controlled Internet access and management traffic.
 
