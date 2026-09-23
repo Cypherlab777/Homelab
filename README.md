@@ -24,9 +24,6 @@ The homelab is currently in the early deployment stage.
 - ✅ [Second Cisco Catalyst 2960-X acquired and validated](Materials/Cisco-Switchs/Cisco-2960x-2/README.md)
 - ✅ [First Cisco Catalyst C3850 acquired and validated](Materials/Cisco-Switchs/Cisco-3850-1/README.md)
 - ✅ [Second Cisco Catalyst C-3850 acquired and validated](Materials/Cisco-Switchs/Cisco-3850-2/README.md)
-- ✅ Initial hardware inspection and console access completed
-- ✅ IOS and factory-default configuration verified
-- ✅ First device documentation published
 
 ### In progress
 
@@ -37,14 +34,11 @@ The homelab is currently in the early deployment stage.
 
 ### Upcoming
 
-- ⬜ Second Cisco Catalyst 2960-X
-- ⬜ Cisco Catalyst 3650 switches
+- ⬜ 15U rack deployment
 - ⬜ Grandstream GWN7822P
 - ⬜ pfSense firewall/router
-- ⬜ 15U rack deployment
-- ⬜ VLAN segmentation and inter-VLAN routing
 - ⬜ Proxmox virtualization platform
-- ⬜ Integration of Windows Server, Active Directory, and Linux systems
+
 ---
 
 ## 🎯 Objectives
@@ -149,9 +143,9 @@ Each major device has its own documentation folder under `Materials/`.
 | Status | Device | Role |
 |---|---|---|
 | ✅ | Cisco Catalyst WS-C2960X-24TS-L #1 | Layer 2 access switch |
-| ⬜ | Cisco Catalyst WS-C2960X-24TS-L #2 | Layer 2 access switch |
-| ⬜ | Cisco Catalyst 3650 #1 | Layer 3 distribution / collapsed-core |
-| ⬜ | Cisco Catalyst 3650 #2 | Layer 3 distribution / collapsed-core |
+| ✅ | Cisco Catalyst WS-C2960X-24TS-L #2 | Layer 2 access switch |
+| ✅ | Cisco Catalyst 3650 #1 | Layer 3 distribution / collapsed-core |
+| ✅ | Cisco Catalyst 3650 #2 | Layer 3 distribution / collapsed-core |
 | ⬜ | Grandstream GWN7822P | Central VLAN switching |
 | ⬜ | Mini PC — pfSense | Firewall / router |
 | ⬜ | Mini PC — Proxmox | Virtualization host |
@@ -299,9 +293,9 @@ Repository rules include:
     │
     ├── Materials/
     │   ├── Cisco-Switches/
-    │   │   └── Cisco-2960X-01/
+    │   │   └── Cisco-2960X-1/
     │   │       ├── README.md
-    │   │       └── images/
+    │   │       └── Pictures/
     │   ├── Grandstream/
     │   ├── pfSense/
     │   ├── Proxmox/
