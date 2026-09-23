@@ -84,7 +84,8 @@ show interfaces status
 show vlan brief
 show running-config
 ```
-Story:
+### Story 
+
 When I placed the order for these two switches, the company informed me that they normally sell only to businesses with a valid VAT number.
 
 After contacting them and explaining my homelab project, they decided to make an exception.
