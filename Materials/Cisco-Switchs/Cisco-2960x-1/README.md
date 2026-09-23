@@ -7,6 +7,13 @@
 - Model: WS-C2960X-24TS-L
 - Received: 2026-09-10
 - Condition: Used
+
+### Content
+
+- Switch 2960x
+- Rack Brackets
+- Power cable
+
 ---
 
 ## Why this switch?
