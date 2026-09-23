@@ -47,6 +47,7 @@ Its main responsibilities will include:
 ## Software
 
 IOS : 15.2(7)E2
+
 VID : V06
 
 ---
