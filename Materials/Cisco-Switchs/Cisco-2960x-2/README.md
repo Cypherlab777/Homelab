@@ -53,9 +53,8 @@ Its main responsibilities will include:
 
 ## Software
 
-IOS : 15.2(2)E7
-
-VID : V05
+- IOS : 15.2(2)E7
+- VID : V05
 
 ---
 
