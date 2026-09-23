@@ -1,11 +1,11 @@
-# Cisco Catalyst 2960-X
+# Cisco Catalyst 2960-X 2 
 
 ![Cisco Catalyst 2960-X](./Pictures/2960x.png)
 
 ## Acquisition
 
 - Model: WS-C2960X-24TS-L
-- Received: 2026-09-10
+- Received: 2026-09-18
 - Condition: Used
 ---
 
@@ -46,8 +46,8 @@ Its main responsibilities will include:
 
 ## Software
 
-IOS : 15.2(7)E2
-VID : V06
+IOS : 15.2(2)E7
+VID : V05
 
 ---
 
@@ -63,12 +63,18 @@ show interfaces status
 show vlan brief
 show run
 ```
+### Story
 
-The switch arrived in its factory default configuration.
+When I powered on the switch, a banner appeared stating that the device belonged to a company and that any unauthorized operation on it was strictly prohibited.
+
+Apparently, the switch had not been properly decommissioned before being sold. I therefore contacted the seller, explained the situation, and asked what I was legally allowed to do with the device.
+
+Three days later, I received confirmation that I was now the full owner of the equipment and that I was authorized to erase the previous configuration and restore the switch to its factory-default state.
+
+I was then able to perform the factory reset and begin configuring the switch for my homelab.
 
 ---
 
 ## Conclusion 
 
 After two days of testing, the switch appears to be running perfectly.
-
