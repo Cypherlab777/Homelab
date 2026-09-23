@@ -22,6 +22,8 @@ The homelab is currently in the early deployment stage.
 
 - ✅ [First Cisco Catalyst 2960-x acquired and validated](Materials/Cisco-Switchs/Cisco-2960x-1/README.md)
 - ✅ [Second Cisco Catalyst 2960-X acquired and validated](Materials/Cisco-Switchs/Cisco-2960x-2/README.md)
+- ✅ [First Cisco Catalyst C3850 acquired and validated](Materials/Cisco-Switchs/Cisco-3850-1/README.md)
+- ✅ [Second Cisco Catalyst C-3850 acquired and validated](Materials/Cisco-Switchs/Cisco-3850-2/README.md)
 - ✅ Initial hardware inspection and console access completed
 - ✅ IOS and factory-default configuration verified
 - ✅ First device documentation published
