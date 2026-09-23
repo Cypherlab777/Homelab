@@ -81,6 +81,7 @@ show environment
 show interfaces status
 show vlan brief
 show running-config
+```
 
 ---
 
