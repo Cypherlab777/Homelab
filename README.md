@@ -116,6 +116,8 @@ flowchart TD
 | **2 × Cisco Catalyst 3850 WS-C3850-24T-E** | Layer 3 laboratory switches used for inter-VLAN routing, HSRP, OSPF, ACLs and advanced switching/routing labs |
 | **Future Proxmox Server** | Virtualization platform for Windows Server, Active Directory, Linux, Security+ and other infrastructure laboratories |
 
+pfSense will handle routing and firewall policies between the main homelab segments, while the Catalyst 3850 switches will provide Layer 3 routing within the isolated Cisco lab environment.
+
 > The architecture will progressively evolve as additional servers, virtual machines, clients and network services are added.
 ---
 
@@ -144,8 +146,8 @@ Each major device has its own documentation folder under `Materials/`.
 |---|---|---|
 | ✅ | Cisco Catalyst WS-C2960X-24TS-L #1 | Layer 2 access switch |
 | ✅ | Cisco Catalyst WS-C2960X-24TS-L #2 | Layer 2 access switch |
-| ✅ | Cisco Catalyst 3650 #1 | Layer 3 distribution / collapsed-core |
-| ✅ | Cisco Catalyst 3650 #2 | Layer 3 distribution / collapsed-core |
+| ✅ | Cisco Catalyst 3850 #1 | Layer 3 distribution / collapsed-core |
+| ✅ | Cisco Catalyst 3850 #2 | Layer 3 distribution / collapsed-core |
 | ⬜ | Grandstream GWN7822P | Central VLAN switching |
 | ⬜ | Mini PC — pfSense | Firewall / router |
 | ⬜ | Mini PC — Proxmox | Virtualization host |
@@ -322,9 +324,9 @@ Repository rules include:
 ## 🛠️ Phase 1 — Network infrastructure
 
 - [x] First Cisco Catalyst 2960-X acquired and validated
-- [ ] Second Cisco Catalyst 2960-X acquired
-- [ ] First Cisco Catalyst 3650 switches acquired
-- [ ] Second Cisco Catalyst 3650 switches acquired
+- [x] Second Cisco Catalyst 2960-X acquired
+- [x] First Cisco Catalyst 3850 switches acquired
+- [x] Second Cisco Catalyst 3850 switches acquired
 - [ ] Grandstream Switch acquired
 - [ ] pfSense mini PC acquired
 - [ ] 15U rack installed
