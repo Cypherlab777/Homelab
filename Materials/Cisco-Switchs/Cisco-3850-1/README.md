@@ -58,6 +58,8 @@ Its main responsibilities will include:
 - Power-on test
 - Port LED verification
 - Console access test
+- Fan module verification
+- Power supply verification
 
 ---
 
