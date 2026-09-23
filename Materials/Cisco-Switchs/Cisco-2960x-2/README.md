@@ -1,4 +1,4 @@
-# Cisco Catalyst 2960-X 2 
+# Cisco Catalyst 2960-X (2)
 
 ![Cisco Catalyst 2960-X](./Pictures/2960x.png)
 
@@ -7,6 +7,13 @@
 - Model: WS-C2960X-24TS-L
 - Received: 2026-09-18
 - Condition: Used
+
+### Content
+
+- Switch 2960x
+- Rack Brackets
+- Power cable
+
 ---
 
 ## Why this switch?

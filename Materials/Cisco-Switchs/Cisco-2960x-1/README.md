@@ -1,4 +1,4 @@
-# Cisco Catalyst 2960-X
+# Cisco Catalyst 2960-X (1)
 
 ![Cisco Catalyst 2960-X](./Pictures/2960x.png)
 
