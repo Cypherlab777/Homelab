@@ -57,7 +57,7 @@ Its main responsibilities will include:
 - Visual inspection
 - Power-on test
 - Port LED verification
-- Console access test
+- Console access tes
 - Fan module verification
 - Power supply verification
 
