@@ -67,12 +67,6 @@ Its main responsibilities will include:
 
 ---
 
-## Software
-
-- Firmware version: 1.0.13.6
-
----
-
 ## Initial verification
 
 Commands used:
@@ -86,6 +80,29 @@ show spanning-tree
 show vlan
 
 ```
+---
+
+## Software
+
+- Firmware version: 1.0.13.6
+
+---
+
+## Initial configuration
+
+The initial baseline configuration included:
+
+- Changing the default administrator credentials
+- Configuring a dedicated management VLAN
+- Changing the management IP address
+- Removing management access from VLAN 1
+- Enabling RSTP
+- Creating the main VLANs for the family network, Cisco lab, Proxmox and management
+- Creating a Blackhole VLAN for unused ports
+- Moving unused interfaces to the Blackhole VLAN
+- Administratively shutting down unused interfaces
+- Configuring a DNS domain suffix
+
 ---
 
 ## Observations
