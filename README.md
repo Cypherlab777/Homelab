@@ -4,7 +4,7 @@ This repository documents the design, deployment, operation, and evolution of my
 
 The project was created to move beyond simulated environments such as Cisco Packet Tracer and GNS3 and apply the networking knowledge acquired through my CompTIA Network+ and Cisco CCNA studies to real enterprise hardware.
 
-The environment is being built progressively around Cisco switching, MikroTik, pfSense, Proxmox, Windows Server, Active Directory, and Linux.
+The environment is being built progressively around Cisco switching, Grandstream, pfSense, Proxmox, Windows Server, Active Directory, and Linux.
 
 Its purpose is not only to build a working infrastructure, but to document the complete engineering process:
 
@@ -127,9 +127,10 @@ The initial segmentation plan is:
 | VLAN | Purpose |
 |---|---|
 | VLAN 10 | Family network |
-| VLAN 50 | Homelab network |
+| VLAN 50 | Cisco network |
+| VLAN 99 | Managment |
 | VLAN 100 | Virtualization / servers |
-| Management VLAN | Network device administration |
+| VLAN 999 | Blackhole |
 
 pfSense will handle routing and firewall policies between the main homelab segments, while the Catalyst 3850 switches will provide Layer 3 routing within the isolated Cisco lab environment.
 
