@@ -44,7 +44,7 @@ The homelab is currently in the early deployment stage.
 
 ## 🎯 Objectives
 
-The main objectives of this homelab are to:
+The mains objectives of this homelab are to:
 
 - Apply CCNA networking knowledge on physical enterprise hardware
 - Design and operate a segmented multi-VLAN network
