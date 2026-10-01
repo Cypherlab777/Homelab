@@ -24,6 +24,8 @@ The homelab is currently in the early deployment stage.
 - ✅ [Second Cisco Catalyst 2960-X acquired and validated](Materials/Cisco-Switchs/Cisco-2960x-2/README.md)
 - ✅ [First Cisco Catalyst C3850 acquired and validated](Materials/Cisco-Switchs/Cisco-3850-1/README.md)
 - ✅ [Second Cisco Catalyst C-3850 acquired and validated](Materials/Cisco-Switchs/Cisco-3850-2/README.md)
+- ✅ [Grandstream GWN7822P acquired and validated](Materials/Grandstream/README.md)
+
 
 ### In progress
 
@@ -35,7 +37,6 @@ The homelab is currently in the early deployment stage.
 ### Upcoming
 
 - ⬜ 15U rack deployment
-- ⬜ Grandstream GWN7822P
 - ⬜ pfSense firewall/router
 - ⬜ Proxmox virtualization platform
 
@@ -146,7 +147,7 @@ Each major device has its own documentation folder under `Materials/`.
 | ✅ | Cisco Catalyst WS-C2960X-24TS-L #2 | Layer 2 access switch |
 | ✅ | Cisco Catalyst 3850 #1 | Layer 3 distribution / collapsed-core |
 | ✅ | Cisco Catalyst 3850 #2 | Layer 3 distribution / collapsed-core |
-| ⬜ | Grandstream GWN7822P | Central VLAN switching |
+| ✅ | Grandstream GWN7822P | Central VLAN switching |
 | ⬜ | Mini PC — pfSense | Firewall / router |
 | ⬜ | Mini PC — Proxmox | Virtualization host |
 | ⬜ | 15U rack | Physical infrastructure |
@@ -325,7 +326,7 @@ Repository rules include:
 - [x] Second Cisco Catalyst 2960-X acquired
 - [x] First Cisco Catalyst 3850 switches acquired
 - [x] Second Cisco Catalyst 3850 switches acquired
-- [ ] Grandstream Switch acquired
+- [x] Grandstream Switch acquired
 - [ ] pfSense mini PC acquired
 - [ ] 15U rack installed
 - [ ] Core network architecture deployed
