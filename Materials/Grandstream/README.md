@@ -1,6 +1,6 @@
 # Grandstream GWN7822P
 
-![Grandstream GWN7822P](./Pictures/GWN7822P.png)
+![Grandstream GWN7822P](/Pictures/GWN7822P.png)
 
 ## Acquisition
 
@@ -10,7 +10,7 @@
 
 ### Package Contents
 
-![Package Contents](./Pictures/Package-contents.png)
+![Package Contents](/Pictures/Package-contents.png)
 
 - Grandstream GWN7822P
 - Power Cord Anti-Trip
