@@ -75,7 +75,7 @@ flowchart TD
 
     CISCOLAB["Cisco Networking Lab"]
 
-    VIRTUALIZATION["Virtualization Lab<br/>Future Proxmox Server"]
+    VIRTUALIZATION["Virtualization Lab<br/>Proxmox Server"]
 
     L2["2 × Cisco Catalyst 2960-X<br/>WS-C2960X-24TS-L<br/>Layer 2 Switching"]
 
