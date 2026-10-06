@@ -73,7 +73,6 @@ Proxmox VE was chosen because it provides a complete environment for centrally m
 It will allow me to:
 
 - Create and manage virtual machines
-- Run Linux containers (LXC)
 - Create and manage snapshots
 - Configure virtual networking
 - Build isolated lab environments
