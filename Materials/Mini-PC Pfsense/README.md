@@ -1,58 +1,66 @@
-# CWWK Mini PC Pfsense
+# CWWK Mini PC - pfSense
 
-![Device Name](./Pictures/[image-name].jpg)
+![Device Name](./Pictures/Cww.jpg)
 
 ## Acquisition
 
-- Model:
-- Received:
-- Condition:
+- Model: CWWK Mini PC
+- Received: 2026.10.06
+- Condition: New
 
 ### Package Contents
 
-![Package Contents](./Pictures/[package-contents-image].jpg)
+![Package Contents](./Pictures/Package.jpg)
 
-- 
-- 
-- 
-- 
-- 
+- CWWK Mini PC
+- Power adapter
+- SATA/power cable
+- Mounting bracket
+- Screws and mounting hardware
 
 ---
 
 ## Why this device?
 
-[Explain why you chose this device.]
+This device was chosen for its hardware capabilities and connectivity options.
 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
+- CPU: Intel Processor N300
+- RAM: 8 GB
+- SSD: 128 GB NVMe
+- NIC: 6 × Intel i226-V 2.5 GbE
+- USB 3.0 port
+- USB ports
+- USB-C
+- TF / microSD slot
+- HDMI outputs
 
-[Additional explanation about features, capabilities, protocols, management options, etc.]
+I chose the Intel N300 because it offers 8 cores / 8 threads, compared with 4 cores / 4 threads on the N150.
 
-[Optional comparison with other vendors/models.]
+This additional processing headroom will be useful when running several network services simultaneously, such as:
 
-[Explain how this device fits your learning goals or homelab.]
+- Inter-VLAN routing
+- Firewalling
+- VPN services
+- IDS / IPS
+- NAT / PAT
+- Traffic processing across 2.5 GbE interfaces
 
 ---
 
 ## Role in the homelab
 
-[Explain the main role of the device.]
+This device will act as the main firewall and router of the homelab.
 
 Its main responsibilities will include:
 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
+- Traffic filtering and firewall rules
+- Inter-VLAN routing
+- NAT / PAT
+- VPN services
+- IDS / IPS with Suricata or Snort
+- Network segmentation and DMZ
+- Traffic shaping / QoS
+- Network monitoring and traffic analysis
 
 ---
 
@@ -65,52 +73,18 @@ Its main responsibilities will include:
 
 ---
 
-## Initial verification
-
-Commands used:
-
-```text
-show version
-show running-config
-```
-
----
-
 ## Software
 
-- Firmware / Software version:
+This device will run pfSense Community Edition (pfSense CE), an open-source firewall and routing operating system based on FreeBSD.
 
----
-
-## Initial configuration
-
-The initial baseline configuration included:
-
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-
----
-
-## Observations
-
-[Add observations discovered during installation, configuration or testing.]
-
-[Add hardware, software, CLI, GUI or compatibility observations.]
-
-[Add anything unusual or worth documenting.]
+pfSense was chosen because it provides a complete set of networking and security features and is well suited for a homelab environment.
 
 ---
 
 ## Conclusion
 
-[Current device status.]
+This CWWK appliance will become a key component of my homelab by acting as the main firewall and router.
 
-[Future tests, configurations or improvements planned.]
+With its Intel N300 processor, 8 GB of RAM and six 2.5 GbE interfaces, it provides enough performance and flexibility to experiment with advanced networking and security features such as VLAN segmentation, VPNs, IDS/IPS, NAT, traffic shaping and network monitoring.
+
+Running pfSense Community Edition will allow me to move from simulated networking labs to a real firewall environment and gain hands-on experience with technologies commonly used in network and security infrastructures.
