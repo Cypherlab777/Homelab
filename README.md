@@ -25,7 +25,9 @@ The homelab is currently in the early deployment stage.
 - ✅ [First Cisco Catalyst C3850 acquired and validated](Materials/Cisco-Switchs/Cisco-3850-1/README.md)
 - ✅ [Second Cisco Catalyst C-3850 acquired and validated](Materials/Cisco-Switchs/Cisco-3850-2/README.md)
 - ✅ [Grandstream GWN7822P acquired and validated](Materials/Grandstream/README.md)
-
+- ✅ [Pfsense firewall/router acquired and validated](Materials/Mini-PC%20Pfsense/README.md)
+- ✅ [K8 plus Proxmox virtualization platform acquired and validated](Materials/Mini-PC%20Proxmox/README.md)
+- ✅ [15U Lanberg rack deployment acquired and validated](Materials/Rack/README.md)
 
 ### In progress
 
@@ -33,12 +35,6 @@ The homelab is currently in the early deployment stage.
 - 🔄 Physical network and VLAN design
 - 🔄 Repository structure and documentation
 - 🔄 Homelab architecture planning
-
-### Upcoming
-
-- ⬜ 15U rack deployment
-- ⬜ pfSense firewall/router
-- ⬜ Proxmox virtualization platform
 
 ---
 
@@ -115,7 +111,7 @@ flowchart TD
 | **Grandstream GWN7822P** | Central managed switch connecting the family network, Cisco lab and future virtualization infrastructure |
 | **2 × Cisco Catalyst 2960-X WS-C2960X-24TS-L** | Layer 2 laboratory switches used for VLANs, trunks, STP, EtherChannel, Port Security, DHCP Snooping and DAI |
 | **2 × Cisco Catalyst 3850 WS-C3850-24T-E** | Layer 3 laboratory switches used for inter-VLAN routing, HSRP, OSPF, ACLs and advanced switching/routing labs |
-| **Future Proxmox Server** | Virtualization platform for Windows Server, Active Directory, Linux, Security+ and other infrastructure laboratories |
+| **Proxmox Server** | Virtualization platform for Windows Server, Active Directory, Linux, Security+ and other infrastructure laboratories |
 
 > The architecture will progressively evolve as additional servers, virtual machines, clients and network services are added.
 ---
@@ -149,9 +145,9 @@ Each major device has its own documentation folder under `Materials/`.
 | ✅ | Cisco Catalyst 3850 #1 | Layer 3 distribution / collapsed-core |
 | ✅ | Cisco Catalyst 3850 #2 | Layer 3 distribution / collapsed-core |
 | ✅ | Grandstream GWN7822P | Central VLAN switching |
-| ⬜ | Mini PC — pfSense | Firewall / router |
-| ⬜ | Mini PC — Proxmox | Virtualization host |
-| ⬜ | 15U rack | Physical infrastructure |
+| ✅ | Mini PC — pfSense | Firewall / router |
+| ✅ | Mini PC — Proxmox | Virtualization host |
+| ✅ | 15U rack | Physical infrastructure |
 
 Smaller accessories such as console cables, patch cables, keystone modules, and patch-panel components are documented separately under `Materials/Accessory/`.
 
@@ -189,10 +185,6 @@ Main areas:
 - Logging, monitoring, backups, and security
 - Integration with the physical VLAN infrastructure
 - Structured systems troubleshooting
-
-A dedicated Proxmox host is planned.
-
-In the meantime, Windows Server and Active Directory labs are already being performed on Hyper-V using a laptop with 32 GB of RAM.
 
 ---
 
@@ -328,8 +320,8 @@ Repository rules include:
 - [x] First Cisco Catalyst 3850 switches acquired
 - [x] Second Cisco Catalyst 3850 switches acquired
 - [x] Grandstream Switch acquired
-- [ ] pfSense mini PC acquired
-- [ ] 15U rack installed
+- [x] pfSense mini PC acquired
+- [x] 15U rack installed
 - [ ] Core network architecture deployed
 - [ ] VLAN segmentation implemented
 - [ ] Inter-VLAN routing and firewall policies deployed
@@ -340,7 +332,7 @@ Repository rules include:
 ## 🖥️ Phase 2 — Virtualization and systems
 
 - [x] Windows Server and Active Directory labs started on Hyper-V (Laptop)
-- [ ] Proxmox host acquired
+- [x] Proxmox host acquired
 - [ ] Proxmox virtualization platform deployed
 - [ ] Windows Server and Active Directory environment migrated to Proxmox
 - [ ] Linux server environment deployed
