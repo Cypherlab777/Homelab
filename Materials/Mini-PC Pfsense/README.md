@@ -64,15 +64,6 @@ Its main responsibilities will include:
 
 ---
 
-## Initial inspection
-
-- Visual inspection
-- Power-on test
-- Port LED verification
-- Console access test
-
----
-
 ## Software
 
 This device will run pfSense Community Edition (pfSense CE), an open-source firewall and routing operating system based on FreeBSD.
