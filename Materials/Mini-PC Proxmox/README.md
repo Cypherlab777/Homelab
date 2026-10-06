@@ -57,10 +57,18 @@ Its main responsibilities will include:
 - Linux Server virtual machines
 - Active Directory lab environments
 - Security lab environments
+- Vulnerable machine 
 - Network services such as DNS, DHCP and monitoring
 - Temporary testing environments
 - Snapshots and rollback testing
 - Multi-machine virtual lab environments
+
+### Vulnerable Machines
+
+- **Attacker machine:** Personal laptop running Kali Linux, used to perform penetration testing, vulnerability scanning and security assessments.
+- **Target machines:** Virtual machines hosted on Proxmox, intentionally configured with vulnerable services and systems to practice exploitation, detection and remediation in an isolated lab environment.
+
+
 
 ---
 
