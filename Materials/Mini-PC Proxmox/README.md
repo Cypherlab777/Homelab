@@ -57,9 +57,7 @@ Its main responsibilities will include:
 - Linux Server virtual machines
 - Active Directory lab environments
 - Security lab environments
-- Docker and container workloads
 - Network services such as DNS, DHCP and monitoring
-- Automation and scripting environments
 - Temporary testing environments
 - Snapshots and rollback testing
 - Multi-machine virtual lab environments
