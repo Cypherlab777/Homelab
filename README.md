@@ -28,6 +28,8 @@ The homelab is currently in the early deployment stage.
 - ✅ [Pfsense firewall/router acquired and validated](Materials/Mini-PC%20Pfsense/README.md)
 - ✅ [K8 plus Proxmox virtualization platform acquired and validated](Materials/Mini-PC%20Proxmox/README.md)
 - ✅ [15U Lanberg rack deployment acquired and validated](Materials/Rack/README.md)
+- ✅ [Atlantis A03-HP2003 deployment acquired and validated](Materials/UPS/README.md)
+
 
 ### In progress
 
@@ -148,6 +150,10 @@ Each major device has its own documentation folder under `Materials/`.
 | ✅ | Mini PC — pfSense | Firewall / router |
 | ✅ | Mini PC — Proxmox | Virtualization host |
 | ✅ | 15U rack | Physical infrastructure |
+| ✅ |  Atlantis A03-HP2003 | UPS / Power Protection |
+
+
+
 
 Smaller accessories such as console cables, patch cables, keystone modules, and patch-panel components are documented separately under `Materials/Accessory/`.
 
@@ -322,6 +328,7 @@ Repository rules include:
 - [x] Grandstream Switch acquired
 - [x] pfSense mini PC acquired
 - [x] 15U rack installed
+- [x] Atlantis A03-HP2003 installed
 - [ ] Core network architecture deployed
 - [ ] VLAN segmentation implemented
 - [ ] Inter-VLAN routing and firewall policies deployed
