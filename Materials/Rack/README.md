@@ -23,7 +23,27 @@ Condition: New
 
 **Note:** I encountered several issues while assembling this Lanberg rack. One part of the main frame was bent, but fortunately this did not affect the final assembly.
 
-I also noticed several manufacturing defects on the rack structure. Some threaded mounting points were missing, which forced me to get additional nuts and find a workaround myself. I was eventually able to solve the problem.
+Once the frame had been straightened using leverage, I was able to start assembling the rack.
+
+That was when I encountered another issue: when I tried to insert the M6 screws used to secure the different parts of the frame together, I realized that several mounting points were simply not threaded.
+
+The issue affected all 16 mounting points located on the top and bottom sections of the rack. As a result, the supplied M6 screws could not be properly tightened.
+
+After reviewing the documentation, doing some research on forums, and using AI to compare possible solutions, I decided to work around the issue by using M6 nuts together with washers.
+
+This solution allowed me to securely fasten the different parts of the rack and continue the assembly despite this manufacturing defect.
+
+The rest of the assembly went very smoothly. The only other issue I encountered was, this time, caused by a mistake on my part.
+
+While installing the horizontal rails, I had positioned the cage nuts the wrong way, facing toward the inside of the rack. When I tried to install the shelf and the different switches, none of the equipment would fit properly: I was missing approximately 1 cm of clearance.
+
+After checking the rack dimensions, the equipment, and the positioning of the different parts, I went back through the assembly step by step. I then noticed that the cage nuts were protruding by approximately 5 mm on each side toward the inside of the rack.
+
+That explained exactly where the missing centimeter had gone.
+
+After repositioning the cage nuts correctly, all the equipment fitted into the rack normally.
+
+This small mistake also reminded me of something important: when a problem occurs during an installation, it is sometimes better to calmly go back through each step and double-check your own work before assuming that the hardware itself is defective.
 
 ---
 
