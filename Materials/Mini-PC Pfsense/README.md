@@ -1,6 +1,6 @@
 # CWWK Mini PC - pfSense
 
-![Device Name](./Pictures/Cww.jpg)
+![CWWK](./Pictures/Cww.jpg)
 
 ## Acquisition
 

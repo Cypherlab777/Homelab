@@ -1,6 +1,6 @@
 # Lanberg Cabinet Rack FF01
 
-![Device Name](./Pictures/Lanberg.jpg)
+![Rack](./Pictures/Lanberg.jpg)
 
 ## Acquisition
 

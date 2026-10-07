@@ -1,6 +1,6 @@
 # GMKtec NucBox K8 Plus
 
-![Device Name](./Pictures/K8.jpg)
+![GMKtec](./Pictures/K8.jpg)
 
 ## Acquisition
 
