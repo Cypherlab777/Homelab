@@ -11,42 +11,40 @@
 ### Package Contents
 
 - UPS Atlantis A03-HP2003
-- Manuel
+- Manual
 
 ---
 
 ## Why this UPS?
 
-J'ai choisis cette UPS car il remplit plueirus fonction indispensable pour un rack : 
+I chose this UPS because it provides several essential functions for a homelab rack:
 
-- Puissance de 1500 VA / 900 W, largement suffisante pour alimenter les équipements principaux du homelab.
-- Protection contre les coupures de courant, permettant aux équipements de continuer à fonctionner pendant une courte période en cas de panne secteur.
-- Protection contre les variations et perturbations électriques, utile pour du matériel réseau et informatique fonctionnant plusieurs heures.
-- Interface USB HID, permettant de connecter l'UPS à un serveur, notamment Proxmox, afin de surveiller son état et d'automatiser un arrêt propre des machines en cas de coupure prolongée.
-- Bon rapport capacité/prix pour une infrastructure personnelle ne nécessitant pas un UPS professionnel beaucoup plus coûteux.
+- 1500 VA / 900 W capacity, more than enough to power the main homelab equipment.
+- Protection against power outages, allowing the equipment to keep running for a short period during a loss of mains power.
+- Protection against voltage fluctuations and electrical disturbances, useful for network and computing equipment running for extended periods.
+- USB HID interface, allowing the UPS to be connected to a server such as Proxmox in order to monitor its status and automate a clean shutdown of the systems in case of a prolonged power outage.
+- Good capacity-to-price ratio for a personal infrastructure that does not require a much more expensive professional-grade UPS.
 
 ---
 
 ## Role in the homelab
 
-L’UPS Atlantis A03-HP2003 protégera les équipements du homelab contre les coupures de courant, les surtensions et les variations de tension. 
-Il servira également à maintenir temporairement les équipements critiques en fonctionnement et à permettre un arrêt propre du serveur Proxmox en cas de coupure prolongée.
+The Atlantis A03-HP2003 UPS will protect the homelab equipment against power outages, surges, and voltage fluctuations.
+
+It will also temporarily keep critical equipment running and allow the Proxmox server to perform a clean shutdown in case of a prolonged power outage.
 
 ---
 
 ## Observations
 
-Observation: L’UPS est relativement compact malgré sa capacité de 1500 VA / 900 W. L’écran LCD permet de consulter rapidement son état et la charge.
-La présence d’une connexion USB HID permettra également de l’intégrer à Proxmox afin de surveiller l’alimentation et de gérer un arrêt propre en cas de coupure prolongée.
+The UPS is relatively compact despite its 1500 VA / 900 W capacity. The LCD screen provides quick access to information about its status and current load.
+
+The USB HID connection will also allow it to be integrated with Proxmox in order to monitor the power supply and manage a clean shutdown in case of a prolonged outage.
 
 ---
 
 ## Conclusion
 
-L’Atlantis A03-HP2003 complète l’infrastructure du homelab en ajoutant une protection électrique aux équipements critiques. Sa capacité de 1500 VA / 900 W est adaptée à la consommation prévue de l’installation.
+The Atlantis A03-HP2003 completes the homelab infrastructure by adding electrical protection for critical equipment. Its 1500 VA / 900 W capacity is well suited to the expected power consumption of the installation.
 
 ---
-
-
-
-
