@@ -13,8 +13,6 @@
 
 ### Package Contents
 
-![Package Contents](./Pictures/Package-contents.jpg)
-
 - Grandstream GWN7660E Access Point
 
 ---
