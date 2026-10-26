@@ -1,42 +1,80 @@
+
 # 🏠 Homelab Infrastructure Project
 
 This repository documents the design, deployment, operation, and evolution of my personal IT homelab.
 
 The project was created to move beyond simulated environments such as Cisco Packet Tracer and GNS3 and apply the networking knowledge acquired through my CompTIA Network+ and Cisco CCNA studies to real enterprise hardware.
 
-The environment is being built progressively around Cisco switching, Grandstream, pfSense, Proxmox, Windows Server, Active Directory, and Linux.
+The environment is built around Cisco switching, Grandstream, Zyxel, pfSense, Proxmox, Windows Server, Active Directory, and Linux.
+
+The core physical and network infrastructure is now operational, while advanced networking, virtualization, and security laboratories continue to evolve.
 
 Its purpose is not only to build a working infrastructure, but to document the complete engineering process:
 
 **design → deployment → verification → troubleshooting → improvement**
 
-The homelab will also serve as a practical platform for future CCNP and Security+ studies.
+The homelab also serves as a practical platform for my Security+ preparation and future CCNP studies.
 
 ---
 
 ## 🚧 Current status
 
-The homelab is currently in the early deployment stage.
+**Core Infrastructure Operational – Lab Expansion in Progress**
 
-### Completed
+The core homelab infrastructure is now deployed and operational.
 
-- ✅ [First Cisco Catalyst 2960-x acquired and validated](Materials/Cisco-Switchs/Cisco-2960x-1/README.md)
+Internet connectivity, routing, firewalling, VLAN segmentation, wired and wireless access, and the Proxmox virtualization host are established.
+
+The project is now transitioning from initial infrastructure deployment to advanced networking, virtualization, systems administration, and security laboratories.
+
+### ✅ Completed
+
+- ✅ [First Cisco Catalyst 2960-X acquired and validated](Materials/Cisco-Switchs/Cisco-2960x-1/README.md)
 - ✅ [Second Cisco Catalyst 2960-X acquired and validated](Materials/Cisco-Switchs/Cisco-2960x-2/README.md)
-- ✅ [First Cisco Catalyst C3850 acquired and validated](Materials/Cisco-Switchs/Cisco-3850-1/README.md)
-- ✅ [Second Cisco Catalyst C-3850 acquired and validated](Materials/Cisco-Switchs/Cisco-3850-2/README.md)
-- ✅ [Grandstream GWN7822P acquired and validated](Materials/Grandstream/README.md)
-- ✅ [Pfsense firewall/router acquired and validated](Materials/Mini-PC%20Pfsense/README.md)
-- ✅ [K8 plus Proxmox virtualization platform acquired and validated](Materials/Mini-PC%20Proxmox/README.md)
-- ✅ [15U Lanberg rack deployment acquired and validated](Materials/Rack/README.md)
-- ✅ [Atlantis A03-HP2003 deployment acquired and validated](Materials/UPS/README.md)
+- ✅ [First Cisco Catalyst 3850 acquired and validated](Materials/Cisco-Switchs/Cisco-3850-1/README.md)
+- ✅ [Second Cisco Catalyst 3850 acquired and validated](Materials/Cisco-Switchs/Cisco-3850-2/README.md)
+- ✅ [Grandstream GWN7822P deployed](Materials/Grandstream/README.md)
+- ✅ [Grandstream GWN7660E Wi-Fi 6 access point deployed](Materials/Grandstream%20AP/README.md)
+- ✅ [Zyxel GS1200-8HP v3 deployed](Materials/Zyxel/README.md)
+- ✅ [pfSense firewall/router deployed](Materials/Mini-PC%20Pfsense/README.md)
+- ✅ [GMKtec K8 Plus Proxmox host deployed](Materials/Mini-PC%20Proxmox/README.md)
+- ✅ [15U Lanberg rack installed](Materials/Rack/README.md)
+- ✅ [Atlantis A03-HP2003 UPS installed](Materials/UPS/README.md)
+- ✅ VOO GigaMax modem configured in bridge mode
+- ✅ pfSense configured as the main router and firewall
+- ✅ NAT and internet connectivity operational
+- ✅ VLAN-based network segmentation implemented
+- ✅ Family Network (VLAN 10) operational
+- ✅ Management Network (VLAN 99) configured
+- ✅ Grandstream and Zyxel switch connectivity established
+- ✅ Wi-Fi 6 connectivity operational
+- ✅ PoE connectivity established for the wireless access point
+- ✅ Inter-VLAN routing and firewall policies implemented
+- ✅ Proxmox host installed and management access configured
+- ✅ Windows Server and Active Directory labs started on Hyper-V
 
+### 🔄 In progress
 
-### In progress
+- 🔄 Cisco Catalyst 3850 and 2960-X laboratory integration
+- 🔄 Advanced Layer 2 and Layer 3 networking laboratories
+- 🔄 Proxmox virtual networking and virtual machine deployment
+- 🔄 Firewall policy refinement and network security hardening
+- 🔄 Repository structure and technical documentation
+- 🔄 Network diagrams and configuration documentation
+- 🔄 Final cable management and rack optimization
+- 🔄 Homelab architecture improvements
 
-- 🔄 Cisco lab deployment
-- 🔄 Physical network and VLAN design
-- 🔄 Repository structure and documentation
-- 🔄 Homelab architecture planning
+### 📋 Planned
+
+- 📋 Windows Server and Active Directory deployment on Proxmox
+- 📋 Group Policy (GPO) laboratories
+- 📋 Linux server administration laboratories
+- 📋 Advanced dynamic routing laboratories
+- 📋 HSRP, STP, and EtherChannel laboratories
+- 📋 Dedicated guest wireless network
+- 📋 Centralized network monitoring and logging
+- 📋 Backup and recovery strategy
+- 📋 Advanced network security and traffic analysis laboratories
 
 ---
 
@@ -47,21 +85,23 @@ The main objectives of this homelab are to:
 - Apply CCNA networking knowledge on physical enterprise hardware
 - Design and operate a segmented multi-VLAN network
 - Practice Layer 2 and Layer 3 networking
-- Implement inter-VLAN routing
-- Deploy routing, firewalling, and NAT with pfSense
+- Implement and understand inter-VLAN routing
+- Deploy and manage routing, firewalling, and NAT with pfSense
 - Practice structured network troubleshooting
 - Deploy Windows Server, Active Directory, and Linux services
-- Learn virtualization with Proxmox
+- Learn and practice virtualization with Proxmox
 - Build a secure remote administration environment
 - Apply network security features on real equipment
 - Document configurations, failures, troubleshooting, and solutions
-- Support future CCNP and Security+ studies
+- Support future CCNP and ongoing Security+ studies
 
 ---
 
 ## 🗺️ Target architecture
 
-The homelab is being built progressively around the following target architecture:
+The core network infrastructure is operational and provides the foundation for the Cisco networking, virtualization, and security laboratories.
+
+The following diagram represents the current core infrastructure and the planned laboratory environment.
 
 ```mermaid
 flowchart TD
@@ -80,9 +120,9 @@ flowchart TD
 
     FAMILY["Family Network<br/>VLAN 10<br/>Wired Devices"]
 
-    WIFI["Wireless Clients<br/>Family / Guest Wi-Fi"]
+    WIFI["Wireless Clients<br/>Family / Future Guest Wi-Fi"]
 
-    CISCOLAB["Cisco Networking Lab"]
+    CISCOLAB["Cisco Networking Lab<br/>Integration In Progress"]
 
     VIRTUALIZATION["Virtualization Lab<br/>Proxmox Server"]
 
@@ -103,48 +143,72 @@ flowchart TD
     ZYXEL -->|"PoE"| AP
     AP --> WIFI
 
-    GRANDSTREAM --> CISCOLAB
+    GRANDSTREAM -.-> CISCOLAB
     GRANDSTREAM --> VIRTUALIZATION
 
-    CISCOLAB --> L2
-    CISCOLAB --> L3
+    CISCOLAB -.-> L2
+    CISCOLAB -.-> L3
 
-    L2 --> NETWORKLAB
-    L3 --> NETWORKLAB
+    L2 -.-> NETWORKLAB
+    L3 -.-> NETWORKLAB
 
-    VIRTUALIZATION --> SERVERLAB
+    VIRTUALIZATION -.-> SERVERLAB
 ```
 
+**Diagram legend:**
+
+- **Solid lines:** Deployed core network infrastructure and connectivity.
+- **Dashed lines:** Planned or ongoing laboratory integration.
 
 ### Component roles
 
 | Component | Role |
 |---|---|
-| **VOO ISP Modem** | Internet access, configured in bridge mode so pfSense can act as the main router and firewall |
-| **pfSense Mini PC** | Main firewall, routing, NAT, VLAN gateways and network security |
-| **Grandstream GWN7822P** | Central managed switch connecting the family network, Cisco lab and future virtualization infrastructure |
-| **2 × Cisco Catalyst 2960-X WS-C2960X-24TS-L** | Layer 2 laboratory switches used for VLANs, trunks, STP, EtherChannel, Port Security, DHCP Snooping and DAI |
-| **2 × Cisco Catalyst 3850 WS-C3850-24T-E** | Layer 3 laboratory switches used for inter-VLAN routing, HSRP, OSPF, ACLs and advanced switching/routing labs |
-| **Proxmox Server** | Virtualization platform for Windows Server, Active Directory, Linux, Security+ and other infrastructure laboratories |
+| **VOO ISP Modem** | Provides internet connectivity in bridge mode, allowing pfSense to operate as the main router and firewall |
+| **pfSense Mini PC** | Main firewall, inter-VLAN routing, NAT, VLAN gateways, and network security |
+| **Grandstream GWN7822P** | Central managed switch connecting the family network, management infrastructure, Proxmox host, and future Cisco laboratory |
+| **Grandstream GWN7660E** | Wi-Fi 6 access point providing wireless connectivity for family devices (VLAN 10) and supporting future guest networks, powered via PoE by the Zyxel switch |
+| **Zyxel GS1200-8HP v3** | Managed Gigabit PoE switch extending the family network (VLAN 10), powering the Grandstream Wi-Fi 6 access point, and connecting to the main Grandstream switch through an 802.1Q trunk |
+| **2 × Cisco Catalyst 2960-X WS-C2960X-24TS-L** | Layer 2 laboratory switches for VLANs, trunks, STP, EtherChannel, Port Security, DHCP Snooping, and DAI |
+| **2 × Cisco Catalyst 3850 WS-C3850-24T-E** | Layer 3 laboratory switches for inter-VLAN routing, HSRP, OSPF, ACLs, and advanced switching/routing laboratories |
+| **Proxmox Server** | Operational virtualization host used to build Windows Server, Active Directory, Linux, security, and infrastructure laboratories |
 
-> The architecture will progressively evolve as additional servers, virtual machines, clients and network services are added.
+> The core infrastructure is operational. The architecture continues to evolve as additional servers, virtual machines, clients, network services, and Cisco laboratories are integrated.
+
 ---
 
-## 🌐 Planned network segmentation
+## 🌐 Network segmentation
 
-The initial segmentation plan is:
+The network uses VLAN-based segmentation to separate family devices, management traffic, and laboratory environments.
 
-| VLAN | Purpose |
-|---|---|
-| VLAN 10 | Family network |
-| VLAN 50 | Cisco network |
-| VLAN 99 | Managment |
-| VLAN 100 | Virtualization / servers |
-| VLAN 999 | Blackhole |
+### VLAN design
 
-pfSense will handle routing and firewall policies between the main homelab segments, while the Catalyst 3850 switches will provide Layer 3 routing within the isolated Cisco lab environment.
+| VLAN | Purpose | Status |
+|---|---|---|
+| VLAN 10 | Family network | Operational |
+| VLAN 50 | Cisco / Homelab network | Planned laboratory integration |
+| VLAN 99 | Management | Configured |
+| VLAN 100 | Virtualization / servers | Configuration and integration in progress |
+| VLAN 999 | Blackhole / unused ports | Planned security practice |
 
-The main goal is to isolate the lab environment from the family network while still allowing controlled Internet access and management traffic.
+pfSense handles routing and firewall policies between the main network segments.
+
+The Cisco Catalyst 3850 switches are intended to provide additional Layer 3 routing within the Cisco laboratory environment, including static routing, dynamic routing protocols, and first-hop redundancy.
+
+The Grandstream GWN7822P and Zyxel GS1200-8HP v3 operate primarily as Layer 2 switches within the core home network.
+
+### Segmentation objectives
+
+The main goal is to isolate the laboratory environment from the family network while allowing controlled internet access and authorized management traffic.
+
+The segmentation also allows me to:
+
+- Separate family devices from experimental networking environments
+- Restrict administrative access to network equipment
+- Apply dedicated firewall rules between VLANs
+- Test network security policies
+- Build additional isolated virtual and physical networks
+- Experiment with routing without disrupting the family network
 
 ---
 
@@ -152,20 +216,21 @@ The main goal is to isolate the lab environment from the family network while st
 
 Each major device has its own documentation folder under `Materials/`.
 
+The status below distinguishes deployed infrastructure from hardware acquired for the Cisco laboratory.
+
 | Status | Device | Role |
 |---|---|---|
-| ✅ | Cisco Catalyst WS-C2960X-24TS-L #1 | Layer 2 access switch |
-| ✅ | Cisco Catalyst WS-C2960X-24TS-L #2 | Layer 2 access switch |
-| ✅ | Cisco Catalyst 3850 #1 | Layer 3 distribution / collapsed-core |
-| ✅ | Cisco Catalyst 3850 #2 | Layer 3 distribution / collapsed-core |
-| ✅ | Grandstream GWN7822P | Central VLAN switching |
-| ✅ | Mini PC — pfSense | Firewall / router |
-| ✅ | Mini PC — Proxmox | Virtualization host |
-| ✅ | 15U rack | Physical infrastructure |
-| ✅ |  Atlantis A03-HP2003 | UPS / Power Protection |
-
-
-
+| ✅ Validated | Cisco Catalyst WS-C2960X-24TS-L #1 | Layer 2 access switch |
+| ✅ Validated | Cisco Catalyst WS-C2960X-24TS-L #2 | Layer 2 access switch |
+| ✅ Validated | Cisco Catalyst 3850 #1 | Layer 3 distribution / collapsed-core |
+| ✅ Validated | Cisco Catalyst 3850 #2 | Layer 3 distribution / collapsed-core |
+| ✅ Deployed | Grandstream GWN7822P | Central VLAN switching |
+| ✅ Deployed | Mini PC — pfSense | Firewall / router |
+| ✅ Deployed | Mini PC — Proxmox | Virtualization host |
+| ✅ Installed | 15U Lanberg rack | Physical infrastructure |
+| ✅ Installed | Atlantis A03-HP2003 | UPS / Power Protection |
+| ✅ Deployed | Grandstream GWN7660E | Wi-Fi 6 Access Point |
+| ✅ Deployed | Zyxel GS1200-8HP v3 | Family Network / PoE Switch |
 
 Smaller accessories such as console cables, patch cables, keystone modules, and patch-panel components are documented separately under `Materials/Accessory/`.
 
@@ -175,15 +240,24 @@ Smaller accessories such as console cables, patch cables, keystone modules, and 
 
 The Cisco lab provides a physical environment for practicing and extending the networking concepts studied through CCNA and future CCNP work.
 
-Main areas:
+Four Cisco Catalyst switches have been acquired and validated:
+
+- 2 × Cisco Catalyst 2960-X
+- 2 × Cisco Catalyst 3850
+
+Their integration into the homelab architecture is currently in progress.
+
+### Main areas
 
 - Layer 2 switching: VLANs, trunking, STP/RPVST+, EtherChannel
 - Layer 2 security: Port Security, DHCP Snooping, DAI, BPDU Guard
 - Layer 3 networking: inter-VLAN routing, static and dynamic routing, IPv4/IPv6
-- First-hop redundancy: HSRP for IPv4 and HSRPv2 for IPv6
+- First-hop redundancy: HSRP for IPv4 and HSRP for IPv6
 - Network architecture: access/distribution roles and collapsed-core design
 - Management and hardening: SSH, management VLANs, device security
 - Troubleshooting, validation, redundancy, and failover testing
+
+The Cisco laboratory will operate alongside the existing pfSense-based infrastructure while allowing additional routing and switching scenarios to be tested.
 
 The long-term objective is to reuse the same physical infrastructure for more advanced CCNP-oriented labs.
 
@@ -191,9 +265,15 @@ The long-term objective is to reuse the same physical infrastructure for more ad
 
 ## 🖥️ Virtualization and systems lab
 
-The virtualization and systems lab is used to deploy, integrate, and troubleshoot Windows and Linux environments.
+The virtualization and systems lab is designed to deploy, integrate, and troubleshoot Windows and Linux environments.
 
-Main areas:
+The GMKtec K8 Plus Proxmox host is installed and operational.
+
+The virtualization platform provides the foundation for deploying additional virtual machines, isolated virtual networks, and infrastructure services.
+
+Windows Server and Active Directory laboratory work has also been started separately using Hyper-V.
+
+### Main areas
 
 - Proxmox virtualization and virtual networking
 - Windows Server and Active Directory
@@ -203,6 +283,12 @@ Main areas:
 - Logging, monitoring, backups, and security
 - Integration with the physical VLAN infrastructure
 - Structured systems troubleshooting
+
+### Current focus
+
+The next steps involve expanding the Proxmox environment, configuring additional virtual networks, and deploying infrastructure services.
+
+The objective is to connect physical networking concepts with virtualized systems administration and security laboratories.
 
 ---
 
@@ -227,11 +313,13 @@ Each device folder may contain:
 
 Example:
 
-    Materials/
-    └── Cisco-Switches/
-        └── Cisco-2960X-01/
-            ├── README.md
-            └── images/
+```text
+Materials/
+└── Cisco-Switchs/
+    └── Cisco-2960x-1/
+        ├── README.md
+        └── Pictures/
+```
 
 ### `Labs/`
 
@@ -257,12 +345,14 @@ The goal is to show the real engineering process rather than only the final work
 
 ### Infrastructure
 
-The homelab is designed with security in mind.
+The homelab is designed and operated with security in mind.
 
-Planned and implemented practices include:
+The core infrastructure already uses VLAN segmentation, pfSense firewall policies, and dedicated network management.
 
-- SSH-only administration
-- No Telnet
+Current and planned security practices include:
+
+- SSH-based administration
+- Avoiding Telnet for device administration
 - Dedicated management VLAN
 - Local authentication
 - Firewall policies
@@ -277,6 +367,8 @@ Planned and implemented practices include:
 - Controlled inter-VLAN communication
 - Restricted management access
 - Separation between family and lab networks
+
+Some of these security features are already part of the operational infrastructure, while others will be implemented and tested in the Cisco and security laboratories.
 
 ### Repository
 
@@ -297,65 +389,86 @@ Repository rules include:
 
 ## 📂 Repository structure
 
-    Homelab/
-    │
-    ├── README.md
-    ├── CHANGELOG.md
-    ├── .gitignore
-    │
-    ├── Materials/
-    │   ├── Cisco-Switches/
-    │   │   └── Cisco-2960X-1/
-    │   │       ├── README.md
-    │   │       └── Pictures/
-    │   ├── Grandstream/
-    │   ├── pfSense/
-    │   ├── Proxmox/
-    │   ├── Rack/
-    │   └── Accessory/
-    │
-    ├── Labs/
-    │   ├── Cisco/
-    │   └── Virtualization/
-    │
-    ├── Configs/
-    │   ├── Cisco/
-    │   ├── pfSense/
-    │   └── Grandstream/
-    │
-    ├── Diagrams/
-    │   ├── Physical/
-    │   └── Logical/
-    │
-    └── Troubleshooting/
+```text
+Homelab/
+│
+├── README.md
+├── CHANGELOG.md
+├── .gitignore
+│
+├── Materials/
+│   ├── Cisco-Switchs/
+│   │   ├── Cisco-2960x-1/
+│   │   ├── Cisco-2960x-2/
+│   │   ├── Cisco-3850-1/
+│   │   └── Cisco-3850-2/
+│   ├── Grandstream/
+│   ├── Grandstream AP/
+│   ├── Zyxel/
+│   ├── Mini-PC Pfsense/
+│   ├── Mini-PC Proxmox/
+│   ├── Rack/
+│   ├── UPS/
+│   └── Accessory/
+│
+├── Labs/
+│   ├── Cisco/
+│   └── Virtualization/
+│
+├── Configs/
+│   ├── Cisco/
+│   ├── pfSense/
+│   └── Grandstream/
+│
+├── Diagrams/
+│   ├── Physical/
+│   └── Logical/
+│
+└── Troubleshooting/
+```
+
+> The repository structure evolves as new equipment, configurations, and laboratories are documented.
 
 ---
 
 ## 🛠️ Phase 1 — Network infrastructure
 
+The core network infrastructure has been deployed successfully.
+
 - [x] First Cisco Catalyst 2960-X acquired and validated
-- [x] Second Cisco Catalyst 2960-X acquired
-- [x] First Cisco Catalyst 3850 switches acquired
-- [x] Second Cisco Catalyst 3850 switches acquired
-- [x] Grandstream Switch acquired
-- [x] pfSense mini PC acquired
+- [x] Second Cisco Catalyst 2960-X acquired and validated
+- [x] First Cisco Catalyst 3850 acquired and validated
+- [x] Second Cisco Catalyst 3850 acquired and validated
+- [x] Grandstream GWN7822P switch deployed
+- [x] Zyxel GS1200-8HP v3 deployed
+- [x] Grandstream GWN7660E Wi-Fi 6 AP deployed
+- [x] pfSense mini PC deployed
+- [x] VOO GigaMax modem configured in bridge mode
 - [x] 15U rack installed
-- [x] Atlantis A03-HP2003 installed
-- [ ] Core network architecture deployed
-- [ ] VLAN segmentation implemented
-- [ ] Inter-VLAN routing and firewall policies deployed
+- [x] Atlantis A03-HP2003 UPS installed
+- [x] Core network architecture deployed
+- [x] VLAN segmentation implemented
+- [x] Family VLAN 10 operational
+- [x] Management VLAN 99 configured
+- [x] Inter-VLAN routing and firewall policies deployed
+- [x] Wi-Fi 6 family network operational
+- [x] PoE connectivity for wireless access point established
 - [ ] Cisco lab fully integrated into the homelab
+- [ ] Final rack and cable management completed
 
 ---
 
 ## 🖥️ Phase 2 — Virtualization and systems
 
+The Proxmox virtualization host is operational, and the next phase focuses on deploying and integrating virtualized infrastructure services.
+
 - [x] Windows Server and Active Directory labs started on Hyper-V (Laptop)
 - [x] Proxmox host acquired
-- [ ] Proxmox virtualization platform deployed
+- [x] Proxmox virtualization platform installed and accessible
+- [x] Proxmox management network configured
 - [ ] Windows Server and Active Directory environment migrated to Proxmox
 - [ ] Linux server environment deployed
-- [ ] Virtualization lab integrated with the physical network
+- [ ] Virtualization lab fully integrated with the physical network
 - [ ] Monitoring and centralized logging implemented
 - [ ] Backup strategy implemented
 
@@ -363,12 +476,15 @@ Repository rules include:
 
 ## 🔐 Phase 3 — Advanced networking and security
 
+The operational core infrastructure provides a foundation for more advanced networking and security experiments.
+
 Future areas include:
 
 - Advanced routing, redundancy, and high availability
 - VPN, AAA, and centralized authentication
 - Network monitoring, Syslog, and SNMP
 - Network hardening and advanced firewall policies
+- Network traffic analysis and security monitoring
 - Automation, CCNP-oriented labs, and Security+-oriented labs
 
 ---
@@ -389,14 +505,20 @@ Problems are documented whenever possible with:
 
 The goal is not to hide failures, but to use them as part of the learning process.
 
+The deployment of the core infrastructure has already provided practical troubleshooting experience involving network connectivity, VLAN configuration, switch management, firewall policies, and virtualization networking.
+
+These experiences are part of the documentation process and help reinforce the theoretical knowledge acquired during my studies.
+
 ---
 
 ## 🚀 Project philosophy
 
 This homelab is a long-term learning environment.
 
+The core infrastructure is now operational, but the project continues to evolve through new laboratories, configurations, and technical challenges.
+
 The objective is not to build everything at once, but to progressively design, deploy, test, break, troubleshoot, improve, and document the infrastructure.
 
 The repository is therefore intended to show not only the final architecture, but also the decisions, mistakes, troubleshooting process, and lessons learned during the project.
 
-**Work in progress — continuously evolving.**
+**Core infrastructure operational — laboratories and documentation continuously evolving.**
