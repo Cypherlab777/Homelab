@@ -1,6 +1,6 @@
 # Grandstream GWN7660E – Wi-Fi 6 Access Point
 
-![Grandstream GWN7660E](./Pictures/GWN7660E.jpg)
+![Grandstream GWN7660E](./Pictures/AP.jpg)
 
 ## Acquisition
 
