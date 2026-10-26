@@ -1,6 +1,6 @@
 # Zyxel GS1200-8HP v3
 
-![Zyxel GS1200-8HP v3](./Pictures/Zyxel.jpg)
+![Zyxel GS1200-8HP v3](./Pictures/Zyxel-sw.png)
 
 ## Acquisition
 
