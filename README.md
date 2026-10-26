@@ -58,6 +58,7 @@ The main objectives of this homelab are to:
 - Support future CCNP and Security+ studies
 
 ---
+
 ## 🗺️ Target architecture
 
 The homelab is being built progressively around the following target architecture:
@@ -73,7 +74,13 @@ flowchart TD
 
     GRANDSTREAM["Grandstream GWN7822P<br/>Central Managed PoE Switch"]
 
-    FAMILY["Family Network"]
+    ZYXEL["Zyxel GS1200-8HP v3<br/>8-Port Gigabit PoE Switch"]
+
+    AP["Grandstream GWN7660E<br/>Wi-Fi 6 Access Point<br/>PoE Powered"]
+
+    FAMILY["Family Network<br/>VLAN 10<br/>Wired Devices"]
+
+    WIFI["Wireless Clients<br/>Family / Guest Wi-Fi"]
 
     CISCOLAB["Cisco Networking Lab"]
 
@@ -91,7 +98,11 @@ flowchart TD
     VOO --> PFSENSE
     PFSENSE --> GRANDSTREAM
 
-    GRANDSTREAM --> FAMILY
+    GRANDSTREAM -->|"802.1Q Trunk"| ZYXEL
+    ZYXEL -->|"VLAN 10"| FAMILY
+    ZYXEL -->|"PoE"| AP
+    AP --> WIFI
+
     GRANDSTREAM --> CISCOLAB
     GRANDSTREAM --> VIRTUALIZATION
 
@@ -103,6 +114,7 @@ flowchart TD
 
     VIRTUALIZATION --> SERVERLAB
 ```
+
 
 ### Component roles
 
