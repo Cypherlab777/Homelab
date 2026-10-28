@@ -409,7 +409,6 @@ Homelab/
 │   ├── Mini-PC Proxmox/
 │   ├── Rack/
 │   ├── UPS/
-│   └── Accessory/
 │
 ├── Labs/
 │   ├── Cisco/
@@ -419,10 +418,6 @@ Homelab/
 │   ├── Cisco/
 │   ├── pfSense/
 │   └── Grandstream/
-│
-├── Diagrams/
-│   ├── Physical/
-│   └── Logical/
 │
 └── Troubleshooting/
 ```
