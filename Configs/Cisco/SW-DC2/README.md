@@ -201,7 +201,7 @@ SW-DC2 uses pfSense as its configured NTP server.
 
 **CLI Screenshot — NTP Synchronization**
 
-![NTP configuration](Pictures/SW-DC1/show_NTP_asso.png)
+![NTP configuration](Pictures/SW-DC2/show_NTP_asso.png)
 
 ---
 
