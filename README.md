@@ -247,6 +247,18 @@ Four Cisco Catalyst switches have been acquired and validated:
 
 Their integration into the homelab architecture is currently in progress.
 
+### Cisco Switch Configurations
+
+The Cisco laboratory uses two Catalyst 3850 switches configured in a collapsed-core architecture, with HSRP gateway redundancy, Rapid-PVST+, inter-VLAN routing, and dedicated management connectivity.
+
+The following documentation includes network diagrams, VLAN assignments, routing configurations, security hardening, CLI verification screenshots, and sanitized configuration files.
+
+- **[SW-DC1 — Cisco Catalyst 3850 Configuration](Configs/Cisco/SW-DC1/README.md)** — Core / Distribution switch, preferred HSRP Active for VLANs 200 and 210.
+- **[SW-DC2 — Cisco Catalyst 3850 Configuration](Configs/Cisco/SW-DC2/README.md)** — Core / Distribution switch, preferred HSRP Active for VLANs 220 and 230.
+
+The Catalyst 2960-X access switch configurations will be added after their integration into the laboratory.
+
+
 ### Main areas
 
 - Layer 2 switching: VLANs, trunking, STP/RPVST+, EtherChannel
