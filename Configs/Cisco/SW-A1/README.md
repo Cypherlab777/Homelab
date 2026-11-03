@@ -286,7 +286,7 @@ Sensitive information, including authentication credentials, password hashes, an
 
 The published configuration is intended for technical documentation and is not a complete restorable device backup.
 
-**Sanitized running configuration:** [View SW-A1 show running-config](Configs/show_running-config_SW-A1.txt)
+**Sanitized running configuration:** [View SW-A1 show running-config](Configs/show_running-config_SW-DC1.txt)
 
 ---
 
