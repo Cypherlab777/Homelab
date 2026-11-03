@@ -142,6 +142,10 @@ The preferred Root Bridges are located at the Catalyst 3850 core/distribution la
 | 220 | SW-DC2 |
 | 230 | SW-DC2 |
 
+
+> **Topology Deployment Note:** The redundant uplinks between SW-A1 and SW-DC2, and between SW-A2 and SW-DC1, are not yet physically connected due to insufficient Ethernet cables. As a result, the current Spanning Tree root bridge elections and port roles may differ from the intended final topology. The missing links will be installed shortly, and the STP verification results and documentation will be updated accordingly.
+
+
 ### PortFast & BPDU Guard
 
 PortFast and BPDU Guard are configured globally for eligible access ports:
