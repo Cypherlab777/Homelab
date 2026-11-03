@@ -238,7 +238,7 @@ Port Security policies will be adapted when connecting PCs, IP phones, or other 
 
 **CLI Screenshot — Port Security Verification**
 
-![Port-security configuration](Pictures/SW-A1/.png)
+![Port-security configuration](Pictures/SW-A1/show_port_security.png)
 
 ### Planned Security Improvements
 
