@@ -672,6 +672,20 @@ After investigating the possible causes, I decided to update the Grandstream GWN
 
 I haven't made multiple hardware or network configuration changes at the same time because I want to understand which change, if any, improves stability.
 
+
+### Monitoring Updates
+
+**November 10, 2026 — 24-hour follow-up**
+
+Approximately 24 hours after updating the Grandstream GWN7822P firmware, no new link-flapping events have been observed in the switch logs.
+
+So far, the network appears stable, which is encouraging considering the repeated link interruptions I experienced before the update, including the two-hour overnight episode.
+
+I will continue monitoring the logs over the next few days to see whether the issue returns.
+
+**Current status:** No new flapping observed. Root cause not yet confirmed.
+
+
 ### Current Status
 
 | Item | Status |
