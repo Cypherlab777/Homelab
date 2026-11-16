@@ -190,7 +190,7 @@ My VLAN 10 now has a public IPv6 prefix.
 
 > 🔧 **Troubleshooting:** Even though Track Interface was correctly configured, VLAN 10 was not receiving any GUA. I had to inspect the `dhcp6c.conf` file to better understand how pfSense was handling Prefix Delegation.
 >
-> [See troubleshooting — Track Interface without GUA](../../../Troubleshooting/pfSense/IPv6/README.md#issue-2)
+> [See troubleshooting — Track Interface](../../Troubleshooting/pfsense/IPv6/README.md#issue-2)
 
 ---
 
@@ -255,7 +255,7 @@ After enabling Router Advertisements, the end hosts on VLAN 10 were able to obta
 
 > 🔧 **Troubleshooting:** Although pfSense had a GUA on the FAMILY interface, the end hosts were still only receiving link-local IPv6 addresses. The problem was that Router Advertisements were not enabled on VLAN 10.
 >
-> [See troubleshooting — SLAAC not working](../../../Troubleshooting/pfSense/IPv6/README.md#issue-3)
+> [See troubleshooting — SLAAC](../../Troubleshooting/pfsense/IPv6/README.md#issue-3)
 
 ---
 
