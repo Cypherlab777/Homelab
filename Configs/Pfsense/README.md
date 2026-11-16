@@ -126,8 +126,7 @@ I therefore decided to use this delegated prefix on VLAN 10 (Family).
 
 > 🔧 **Troubleshooting:** At this stage, I couldn't find the prefix delegated by VOO in the DHCPv6 logs. I had to enable DHCPv6 debug mode to identify it.
 >
-> [See troubleshooting — Prefix Delegation](../../../Troubleshooting/pfsense/IPv6/README.md#issue-1)
-
+> [See troubleshooting](../../../Troubleshooting/pfsense/IPv6/README.md)
 ---
 
 ## 4. Configuring Track Interface on VLAN 10
