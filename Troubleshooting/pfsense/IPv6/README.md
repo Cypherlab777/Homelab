@@ -63,7 +63,7 @@ I then restarted the DHCPv6 negotiation on the WAN interface to generate more de
 This time, I found an IA_PD entry in the logs:
 
 ```text
-IA_PD prefix: 2a02:2788:106:2ee0::/64
+IA_PD prefix: 2001:db8:106:2ee0::/64
 ```
 
 VOO was successfully delegating an IPv6 prefix, but only a `/64`.
@@ -105,7 +105,7 @@ However, no IPv6 Global Unicast Address appeared on the FAMILY interface.
 Under **Status → Interfaces → FAMILY**, only a link-local address was present:
 
 ```text
-fe80::aab8:e0ff:fe0e:7561
+fe80::1
 ```
 
 At the same time, the DHCPv6 logs confirmed that VOO was delegating a `/64`.
@@ -128,7 +128,7 @@ However, after applying the changes and checking the logs, VOO was still delegat
 Example:
 
 ```text
-IA_PD prefix: 2a02:2788:104:22e::/64
+IA_PD prefix: 2001:db8:104:22e::/64
 ```
 
 VOO had not granted the requested `/56`.
@@ -225,13 +225,13 @@ No additional subnet bits were needed to use a `/64` from a delegated `/64`.
 
 After this correction and another DHCPv6 negotiation, the FAMILY interface finally obtained an IPv6 Global Unicast Address.
 
-Example observed:
+Example observed (IPv6 address anonymized):
 
 ```text
 Interface : lagg0.10
 
 IPv6 Address :
-2a02:2788:106:3e2a:aab8:e0ff:fe0e:7561/64
+2001:db8:106:3e2a::1/64
 ```
 
 The issue was resolved.
@@ -276,7 +276,7 @@ I couldn't find any IPv6 Global Unicast Address.
 The host only had a link-local address:
 
 ```text
-fe80::a66b:af07:e818:f4b6%16
+fe80::2%16
 ```
 
 IPv4 was working correctly, but IPv6 autoconfiguration was not.
