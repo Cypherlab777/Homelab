@@ -46,11 +46,11 @@ Under **Interfaces → WAN**, I configured the following settings:
 
 After applying the configuration, pfSense successfully obtained an IPv6 GUA on its WAN interface.
 
-Example observed during my tests:
+Example observed during my tests (IPv6 addresses anonymized):
 
 ```text
-IPv6 Address : 2a02:2788:100:0:b0e8:bd16:5d97:2a50/128
-IPv6 Gateway : fe80::2af:1fff:fe1e:2819%igc0
+IPv6 Address : 2001:db8:100::50/128
+IPv6 Gateway : fe80::abcd%igc0
 ```
 
 ### Why does the WAN interface have a /128 address?
@@ -114,10 +114,10 @@ The limitation is therefore not the number of available IPv6 addresses, but prot
 
 After checking the DHCPv6 logs, I confirmed that VOO was delegating a `/64` prefix.
 
-Example from my logs:
+Example from my logs (prefix anonymized):
 
 ```text
-IA_PD prefix: 2a02:2788:106:2ee0::/64
+IA_PD prefix: 2001:db8:106:2ee0::/64
 ```
 
 This means I only have one public `/64` subnet available for my internal networks using SLAAC.
@@ -127,6 +127,7 @@ I therefore decided to use this delegated prefix on VLAN 10 (Family).
 > 🔧 **Troubleshooting:** At this stage, I couldn't find the prefix delegated by VOO in the DHCPv6 logs. I had to enable DHCPv6 debug mode to identify it.
 >
 > [See troubleshooting — Prefix Delegation](../../Troubleshooting/pfsense/IPv6/README.md#issue-1)
+
 ---
 
 ## 4. Configuring Track Interface on VLAN 10
@@ -179,11 +180,11 @@ I actually observed several different delegated prefixes during my tests.
 
 After correcting my configuration, the FAMILY interface successfully obtained a Global Unicast Address.
 
-Example observed:
+Example observed (IPv6 address anonymized):
 
 ```text
 Interface : lagg0.10
-IPv6 Address : 2a02:2788:106:3e2a:aab8:e0ff:fe0e:7561/64
+IPv6 Address : 2001:db8:106:3e2a::1/64
 ```
 
 My VLAN 10 now has a public IPv6 prefix.
