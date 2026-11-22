@@ -1,5 +1,13 @@
 # Troubleshooting — IPv6 on pfSense
 
+## TL;DR
+
+- **Goal:** Enable IPv6 on pfSense (DHCPv6 Prefix Delegation from VOO) and provide SLAAC on VLAN 10 (Family).
+- **Issue 1 — Delegated prefix not visible:** The WAN had a `/128` GUA, but no prefix was visible in the logs. DHCPv6 debug logs showed that VOO delegates only a `/64` (IA_PD).
+- **Issue 2 — No GUA on VLAN 10:** `dhcp6c.conf` requested a `/56` (`sla-len 8`) while VOO delegated a `/64`. Restoring the `/64` request (`sla-len 0`) and renegotiating fixed it. The mismatch is a probable cause, not a confirmed one.
+- **Issue 3 — Hosts without an IPv6 address:** Router Advertisements were not enabled on the FAMILY interface. Enabling them (Unmanaged mode, RDNSS) restored SLAAC.
+- **Status:** All three issues resolved. Next: continue testing IPv6 (DNS resolution, firewall rules, network isolation).
+
 ## Introduction
 
 While deploying IPv6 on my homelab, I encountered several issues with DHCPv6 Prefix Delegation, Track Interface and SLAAC.
