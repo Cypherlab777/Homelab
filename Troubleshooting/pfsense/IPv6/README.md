@@ -1,5 +1,10 @@
 # 🔧 Troubleshooting — IPv6 on pfSense
 
+**Date:** November 15–16, 2026  
+**Environment:** Personal Homelab  
+**Category:** Networking / IPv6 / pfSense / Troubleshooting  
+**Status:** IPv6 connectivity restored on VLAN 10 — validation and extended testing ongoing
+
 ## TL;DR
 
 - **Goal:** Enable IPv6 on pfSense (DHCPv6 Prefix Delegation from VOO) and provide SLAAC on VLAN 10 (Family).
