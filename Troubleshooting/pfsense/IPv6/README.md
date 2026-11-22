@@ -3,7 +3,7 @@
 **Date:** November 15–16, 2026  
 **Environment:** Personal Homelab  
 **Category:** Networking / IPv6 / pfSense / Troubleshooting  
-**Status:** IPv6 connectivity restored on VLAN 10 — validation and extended testing ongoing
+**Status:** IPv6 deployment on pfSense completed — SLAAC restored on VLAN 10
 
 ## TL;DR
 
