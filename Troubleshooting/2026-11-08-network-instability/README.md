@@ -1,4 +1,3 @@
-
 # Network Troubleshooting — Hyper-V, VLANs & LACP Link Flapping
 
 **Date:** November 8–9, 2026  
@@ -6,9 +5,31 @@
 **Status:** Monitoring after Grandstream firmware update  
 **Root cause:** Still under investigation
 
+## TL;DR
+
+- **Symptom:** Repeated Ethernet link flapping on the LACP link between pfSense and a Grandstream switch, observed alongside intermittent connectivity problems across the network. It happened again overnight for about two hours, without any change on my side.
+- **Evidence:** Both devices logged the same link-state changes (Grandstream Ethernet 1/0/23 ↔ pfSense igc2) with matching timestamps. When inspected, both LAG members were active, LACP counters were healthy, and no CRC/input/output errors were reported.
+- **Hypotheses (none confirmed):** Cable or physical connection, Intel igc NIC (driver, firmware, 2.5 GbE negotiation, EEE), Grandstream firmware, LACP behavior. No direct evidence of a Layer 2 loop or broadcast storm.
+- **Action:** Updated the Grandstream GWN7822P firmware as a single change, then monitored the logs.
+- **Status:** As of November 22, about two weeks after the update, no new flapping or network instability observed. Root cause of the flapping not confirmed. The original Hyper-V VM Internet issue has also disappeared on its own, and I have no explanation for it.
+
+## Quick Timeline
+
+| Time | Event | Source |
+|---|---|---|
+| 17:26 | Grandstream rebooted by me from the CLI (during troubleshooting) | Grandstream |
+| 17:36:32 | LAG1 and both members (Eth 1/0/23, 1/0/24) go down | Grandstream |
+| 17:36:37 – 17:36:40 | Both members come back up (17:36:37), then LAG1 (17:36:40) | Grandstream |
+| 17:38 – 17:43 | WAN (`igc0`) events, possibly related to my ISP box restart | pfSense |
+| 17:53:33 – 17:58:05 | Repeated DOWN/UP on Eth 1/0/23 (examples in section 7) | Grandstream |
+| 17:56:41 – 17:56:45 | DOWN/UP on `igc2`, same timestamps as Eth 1/0/23 | pfSense |
+| Overnight (Nov 8–9) | About 2 hours of link flapping again, no changes from me | — |
+| Nov 10 | About 24 hours after the firmware update: no new flapping observed | Switch logs |
+| Nov 22 | About two weeks after the firmware update: no new flapping or network instability observed. The Hyper-V VM Internet issue has also disappeared, unexplained | — |
+
 ## Introduction
 
-What started as a simple Windows 11 VM deployment turned into a much bigger networking troubleshooting session than I expected! 😅
+What started as a simple Windows 11 VM deployment turned into a much bigger networking troubleshooting session than I expected!
 
 My initial goal was to install a Windows 11 Enterprise VM using Hyper-V and connect it to my Active Directory domain controller running on Proxmox.
 
@@ -189,7 +210,7 @@ I also:
 3. Kept VLAN 100 on the trunk between the Zyxel and Grandstream.
 4. Created a new Hyper-V External Virtual Switch, this time using the Ethernet adapter.
 
-And this is where things started getting really confusing. 😅
+And this is where things started getting really confusing.
 
 ---
 
@@ -213,8 +234,6 @@ The strange thing was that not everything stopped working.
 I couldn't understand why my TV had Internet over Wi-Fi but not over Ethernet, especially since both connections used the same secondary Zyxel switch infrastructure.
 
 Meanwhile, my laptop and phone were working, but my desktop wasn't.
-
-My partner wasn't very happy about the TV losing Internet either. 😂
 
 ### Trying to Restore My Original Configuration
 
@@ -447,8 +466,6 @@ The original VM Internet problem and the physical link flapping might actually b
 
 I still don't know the exact relationship between them.
 
-> Note: I still need to add the exact overnight timestamps and log messages to this README.
-
 ---
 
 ## 10. Checking LACP and Interface Statistics
@@ -501,9 +518,9 @@ While reading the pfSense logs, I found repeated changes in the MAC address asso
 For example:
 
 ```text
-arp: 192.168.10.103 moved from ec:74:d7:da:1e:7e to c8:91:43:5a:17:96 on lagg0.10
+arp: 192.168.10.103 moved from ec:74:d7:xx:xx:xx to c8:91:43:xx:xx:xx on lagg0.10
 
-arp: 192.168.10.103 moved from c8:91:43:5a:17:96 to ec:74:d7:da:1e:7e on lagg0.10
+arp: 192.168.10.103 moved from c8:91:43:xx:xx:xx to ec:74:d7:xx:xx:xx on lagg0.10
 ```
 
 The same IP address was being associated with two different MAC addresses.
@@ -685,6 +702,14 @@ I will continue monitoring the logs over the next few days to see whether the is
 
 **Current status:** No new flapping observed. Root cause not yet confirmed.
 
+**November 22, 2026 — Follow-up**
+
+No new link-flapping events or network instability have been observed since the firmware update (about two weeks).
+
+The original Hyper-V VM Internet issue has also disappeared on its own. I have no explanation for what happened.
+
+**Current status:** No new flapping observed. Hyper-V VM Internet issue no longer occurring. Root causes still not confirmed.
+
 
 ### Current Status
 
@@ -697,7 +722,7 @@ I will continue monitoring the logs over the next few days to see whether the is
 | Monitoring after update | In progress |
 | Cable replacement | Not yet tested |
 | Intel driver/NVM changes | Not performed |
-| Original Hyper-V VM Internet issue | Not resolved |
+| Original Hyper-V VM Internet issue | No longer occurring (unexplained) |
 
 I'm now watching the logs to see whether the link flapping happens again.
 
@@ -723,6 +748,8 @@ During my first attempt:
 - The VM couldn't access the Internet.
 
 I still need to investigate the gateway, DNS, NAT, guest networking, and Hyper-V configuration separately.
+
+**Update (November 22):** This issue has since disappeared on its own. I have no explanation for what happened.
 
 ### Problem 2 — VLAN and SSID Changes
 
