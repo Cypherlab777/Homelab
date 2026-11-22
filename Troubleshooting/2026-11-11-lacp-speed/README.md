@@ -162,4 +162,4 @@ lag1    connected    full    2.5G
 
 ## References
 
-- [LACP link flapping between Grandstream and pfSense — separate investigation](../link-flapping/README.md)
+- [LACP link flapping between Grandstream and pfSense — separate investigation](../2026-11-08-link-flapping/README.md)
