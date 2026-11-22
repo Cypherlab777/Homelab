@@ -5,6 +5,24 @@
 **Category:** Networking / LACP / Troubleshooting  
 **Status:** Speed limitation resolved — physical member verification pending
 
+## TL;DR
+
+- **Symptom:** The LACP aggregation between pfSense and a Grandstream switch was operating at 1 Gbps per link instead of the expected 2.5 Gbps, even though both members were in the `bndl` state.
+- **Evidence:** The same physical port negotiated 2.5 Gbps on its own but only 1 Gbps when it was part of LAG1. Another switch port (17) negotiated 2.5 Gbps with and without the keystone coupler. The Web UI showed the LAG1 speed set to `1000 Mbps`.
+- **Root cause:** LAG1 speed was configured at 1000 Mbps in the Grandstream Web UI. Whether the firmware update changed this setting is unconfirmed.
+- **Action:** Changed the LAG1 speed to 2.5 Gbps. The CLI now reports `lag1 connected full 2.5G`.
+- **Status:** Speed limitation resolved at the LAG level. Both physical members still need to be verified individually at 2.5 Gbps. No new link flapping observed as of November 22.
+
+## Quick Timeline
+
+| Date | Event |
+|---|---|
+| Nov 8–9 | Link-flapping incident on the LACP uplink (documented in a separate report) |
+| Around Nov 9 | Grandstream firmware updated from 1.0.13.6 to 1.0.15.137 |
+| Nov 11 | Member interfaces found at 1 Gbps instead of 2.5 Gbps; LAG1 speed found set to 1000 Mbps in the Web UI and changed to 2.5 Gbps |
+| Nov 13 | About five days after the firmware update: no further link flapping |
+| Nov 22 | About two weeks after the firmware update: no further link flapping or network instability |
+
 ## 1. Network Environment
 
 **Hardware:**
@@ -42,6 +60,12 @@ The connection has remained stable during this observation period.
 This is an encouraging result and suggests that the firmware update may have addressed the instability. However, the exact root cause of the original link-flapping issue has not been conclusively identified.
 
 Monitoring will continue, and the separate link-flapping troubleshooting report will be updated at a later date.
+
+### Follow-Up — November 22, 2026
+
+As of November 22, 2026, approximately two weeks after the Grandstream firmware update, no further link-flapping events or network instability have been observed.
+
+The root cause of the original link-flapping issue has still not been conclusively identified.
 
 ## 3. Problem — Unexpected 1 Gbps Link Speed
 
