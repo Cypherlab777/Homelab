@@ -1,4 +1,4 @@
-# Network Troubleshooting — Hyper-V, VLANs & LACP Link Flapping
+# 🔧 Troubleshooting — Hyper-V, VLANs & LACP Link Flapping
 
 **Date:** November 8–9, 2026  
 **Environment:** My personal homelab  

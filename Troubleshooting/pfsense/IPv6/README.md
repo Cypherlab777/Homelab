@@ -1,4 +1,4 @@
-# Troubleshooting — IPv6 on pfSense
+# 🔧 Troubleshooting — IPv6 on pfSense
 
 ## TL;DR
 
