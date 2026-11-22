@@ -8,7 +8,7 @@ Real troubleshooting investigations conducted in my personal homelab. Each repor
 |---|---|---|---|
 | [LACP link flapping](2026-11-08-link-flapping//README.md) | Nov 8–9, 2026 | Monitoring | Suspected — firmware; unconfirmed |
 | [LACP link speed limited to 1 Gbps](2026-11-11-lacp-speed/README.md) | Nov 11, 2026 | Partially resolved — physical checks pending | Confirmed — LAG1 speed setting |
-| [IPv6 Prefix Delegation and SLAAC on pfSense](/2026-11-15-ipv6-pfsense/README.md) | Nov 15–16, 2026 | Resolved | Mixed — cause varies by issue |
+| [IPv6 Prefix Delegation and SLAAC on pfSense](2026-11-15-ipv6-pfsense/README.md) | Nov 15–16, 2026 | Resolved | Mixed — cause varies by issue |
 
 ## Documentation Format
 
