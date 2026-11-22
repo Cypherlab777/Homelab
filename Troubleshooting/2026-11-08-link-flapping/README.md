@@ -167,4 +167,4 @@ If the fault returns:
 
 ## References
 
-- [LACP link speed limited to 1 Gbps — separate investigation]((../2026-11-11-lacp-speed/README.md))
+- [LACP link speed limited to 1 Gbps — separate investigation](../2026-11-11-lacp-speed/README.md)
