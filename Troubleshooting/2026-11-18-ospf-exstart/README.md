@@ -5,7 +5,7 @@
 **Category:** Networking / OSPF / Interoperability  
 **Status:** Open — Workaround validated on VLAN 250  
 **Root cause:** Unconfirmed  
-**Vendor support:** Grandstream — Investigation pending  
+**Vendor support:** Grandstream — Reported internally, ticket on hold pending feedback
 **Last update:** November 24, 2026
 
 ---
@@ -22,7 +22,7 @@
 
 ## Quick Timeline
 
-**Own investigation (independent work)**
+**Investigation Timeline**
 
 | Date | Action |
 |---|---|
@@ -30,13 +30,14 @@
 | Nov 19 | Support ticket opened with Grandstream |
 | Nov 23 | Controlled P2P/P2P and Broadcast/Broadcast Wireshark captures recorded and compared (Steps 4–5) |
 
-**Grandstream support — requested by the vendor**
+**Vendor Support Timeline**
 
 | Date | Request and follow-up |
 |---|---|
 | Nov 20 | Additional diagnostic data requested (One-Click Debug); provided |
 | Nov 23 | Lab test shared and configuration comparison requested; reply sent |
 | Nov 23 | Repeat of the P2P test requested, with an unfiltered capture including the initial Hello packets; test repeated and capture sent (Step 6); vendor analysis pending |
+| Nov 24 | Behavior reported internally by the vendor, to determine whether it is expected with third-party switches; ticket on hold pending feedback |
 
 Only the items in the second table were done at the vendor's request; everything else is independent work.
 
@@ -253,7 +254,7 @@ In the One-Click Debug archive of November 20 (router ID 10.255.0.1), this messa
 
 **Correlation with the packet capture (hypothesis):**
 
-The log reports `dst-ip 10.255.10.1`, which is the Grandstream's own VLAN 250 address. In the P2P capture (Step 4), the Cisco DBD is sent as unicast to 10.255.10.1. The rejected `DD:RECV` packet is therefore most likely this unicast DBD.
+The log reports `dst-ip 10.255.10.1`, which is the Grandstream's own VLAN 250 address. In the P2P capture (Step 4), the Cisco DBD is sent as unicast to 10.255.10.1. The logged DD:RECV event may correspond to the unicast DBD observed in the packet capture. This correlation remains unconfirmed.
 
 RFC 2328 states that, on point-to-point networks, a sender uses AllSPFRouters as the IP destination (§8.1), so the Cisco unicast deviates from this rule. A receiver, however, must accept packets addressed to its own interface address (§8.2). In Broadcast mode, the Grandstream accepts the same kind of unicast DBD from Cisco, so the rejection appears specific to the Grandstream P2P receive path.
 
@@ -305,6 +306,7 @@ The workaround changes OSPF behavior, including DR/BDR election. It is not a con
 | November 23 | Additional P2P and Broadcast packet-level comparisons completed locally |
 | November 23 | Grandstream asked to repeat the test and provide the unfiltered PCAP, including the initial Hello packets |
 | November 23 | Test repeated in P2P/P2P; unfiltered PCAP and CLI outputs sent |
+| November 24 | Grandstream reported the behavior internally to confirm whether it is expected when using third-party switches or an issue; ticket put on hold pending internal feedback |
 
 The Grandstream lab involves two Grandstream switches, so it does not exercise the Cisco peer involved in this issue.
 
@@ -333,7 +335,7 @@ The Grandstream lab involves two Grandstream switches, so it does not exercise t
 
 ### Vendor Response / Follow-up
 
-**Status:** Awaiting technical findings from Grandstream, following the unfiltered capture sent on November 23.
+**Status:** Behavior reported internally by Grandstream (November 24). Ticket on hold pending their feedback.
 
 **Latest vendor request (November 23):** repeat the test and provide the unfiltered PCAP, including the initial Hello packets. Done.
 
