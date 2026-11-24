@@ -351,7 +351,7 @@ The Grandstream lab involves two Grandstream switches, so it does not exercise t
 
 **Log evidence:**
 
-![Grandstream NetworkMask mismatch log](Screenshots/LOGS/gs-networkmask-mismatch.png)
+![Grandstream NetworkMask mismatch log](Screenshots/P2P/gs-networkmask-mismatch.png)
 
 *Figure 9 — Grandstream log from the November 20 One-Click Debug archive (device time, router ID 10.255.0.1): NetworkMask mismatch on DD:RECV roughly every 5 seconds, with dst-ip equal to the Grandstream's own address.*
 
