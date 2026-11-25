@@ -1,12 +1,12 @@
 # 🔧 Troubleshooting — OSPF Adjacency Stuck in EXSTART/EXCHANGE
 
-**Date:** November 18–24, 2026  
+**Date:** November 18–25, 2026  
 **Environment:** Personal Homelab — Cisco / Grandstream  
 **Category:** Networking / OSPF / Interoperability  
-**Status:** Open — Workaround validated on VLAN 250  
-**Root cause:** Unconfirmed  
-**Vendor support:** Grandstream — Reported internally, ticket on hold pending feedback
-**Last update:** November 24, 2026
+**Status:** Open — Cause identified by vendor; firmware compatibility adjustment planned (no ETA); workaround validated on VLAN 250  
+**Root cause:** Vendor-identified, not independently verified  
+**Vendor support:** Grandstream — Cause identified, firmware adjustment planned  
+**Last update:** November 25, 2026
 
 ---
 
@@ -17,8 +17,8 @@
 - **Investigation:** IPv4 connectivity, MTU, Hello/Dead timers, LLS, Opaque LSA, Router IDs and topology isolation were tested without resolving the issue.
 - **Workaround:** Broadcast/Broadcast successfully establishes a FULL adjacency.
 - **Key lead (hypothesis):** The Grandstream log `NetworkMask mismatch … DD:RECV` reports a `dst-ip` equal to the Grandstream's own interface address, which matches the destination of the unicast Cisco DBD seen in the capture. This points to the Grandstream P2P receive path.
-- **Vendor follow-up:** Grandstream requested an unfiltered P2P/P2P capture including the initial Hello packets. The test was repeated and the capture sent on November 23; their analysis is pending.
-- **Root cause:** Not confirmed. Escalated to Grandstream technical support.
+- **Vendor follow-up:** Grandstream's development team attributes the failure to the Cisco device sending DBD packets as unicast in point-to-point mode (their reading of RFC 2328 §8.1). A compatibility adjustment is planned for a future firmware release; no release date has been confirmed.
+- **Root cause:** Vendor-identified, not independently verified. A clarification request was sent: RFC 2328 §8.2 allows reception of packets addressed to the local interface IP, and the same unicast DBD packets are accepted in Broadcast mode.
 
 ## Quick Timeline
 
@@ -29,6 +29,7 @@
 | Nov 18–19 | OSPF failure investigated: connectivity, parameters, optional features, topology isolation, configuration and packet-level tests (Steps 1–4) |
 | Nov 19 | Support ticket opened with Grandstream |
 | Nov 23 | Controlled P2P/P2P and Broadcast/Broadcast Wireshark captures recorded and compared (Steps 4–5) |
+| Nov 25 | Read RFC 2328 §8.1 and §8.2 and asked the vendor to clarify why unicast DD packets are accepted in Broadcast mode but not in point-to-point mode |
 
 **Vendor Support Timeline**
 
@@ -38,6 +39,7 @@
 | Nov 23 | Lab test shared and configuration comparison requested; reply sent |
 | Nov 23 | Repeat of the P2P test requested, with an unfiltered capture including the initial Hello packets; test repeated and capture sent (Step 6); vendor analysis pending |
 | Nov 24 | Behavior reported internally by the vendor, to determine whether it is expected with third-party switches; ticket on hold pending feedback |
+| Nov 25 | Vendor development team identified the trigger (Cisco unicast DD packets in P2P mode); compatibility adjustment planned in a future firmware, no ETA |
 
 Only the items in the second table were done at the vendor's request; everything else is independent work.
 
@@ -264,7 +266,16 @@ This remains a hypothesis: the log does not print the packet contents.
 
 **Unconfirmed:** Whether the device rejects received DBD packets, encounters an internal validation issue, or is affected by a firmware defect.
 
-**Root cause: Not confirmed.**
+**Vendor findings — November 25, 2026**
+
+Grandstream's development team reported that the Cisco device sends DBD packets as unicast in point-to-point mode, which they consider non-compliant with RFC 2328 §8.1, and that this prevents the adjacency with the GWN7822P. A compatibility adjustment is planned for a future official firmware release; no release date or ETA has been confirmed.
+
+**Open points (clarification requested from Grandstream):**
+
+- RFC 2328 §8.2 allows reception of OSPF packets addressed to the local interface IP. Why unicast DBD packets are accepted in Broadcast mode but not in point-to-point mode is not yet explained.
+- Whether the `NetworkMask mismatch` message on `DD:RECV` is related to this condition.
+
+**Root cause: Identified by the vendor; not independently verified.**
 
 ## 5. Corrective Actions
 
@@ -275,6 +286,8 @@ The existing `/30` subnet was retained.
 The Cisco-to-Cisco link remains Point-to-Point.
 
 The workaround changes OSPF behavior, including DR/BDR election. It is not a confirmed fix for the underlying issue.
+
+A permanent fix is planned by the vendor through a firmware compatibility adjustment (no release date confirmed).
 
 **VLAN 251 ↔ DC2 (Gi1/0/2):** the workaround had not been applied at last verification. If the link is needed, apply Broadcast on both ends.
 
@@ -307,6 +320,8 @@ The workaround changes OSPF behavior, including DR/BDR election. It is not a con
 | November 23 | Grandstream asked to repeat the test and provide the unfiltered PCAP, including the initial Hello packets |
 | November 23 | Test repeated in P2P/P2P; unfiltered PCAP and CLI outputs sent |
 | November 24 | Grandstream reported the behavior internally to confirm whether it is expected when using third-party switches or an issue; ticket put on hold pending internal feedback |
+| November 25 | Grandstream's development team identified and confirmed the cause as the Cisco device sending DD packets as unicast in point-to-point mode (their reading of RFC 2328 §8.1); a compatibility adjustment is planned for a future official firmware release, with no confirmed release date or ETA |
+| November 25 | Reply sent asking why unicast DD packets are accepted in Broadcast mode but not in point-to-point mode (RFC 2328 §8.2), and whether the NetworkMask mismatch message is related |
 
 The Grandstream lab involves two Grandstream switches, so it does not exercise the Cisco peer involved in this issue.
 
@@ -335,7 +350,7 @@ The Grandstream lab involves two Grandstream switches, so it does not exercise t
 
 ### Vendor Response / Follow-up
 
-**Status:** Behavior reported internally by Grandstream (November 24). Ticket on hold pending their feedback.
+**Status:** Cause identified by Grandstream's development team; firmware compatibility adjustment planned, no release date confirmed. Clarification requested on the RFC 2328 §8.2 question and the NetworkMask mismatch message (November 25).
 
 **Latest vendor request (November 23):** repeat the test and provide the unfiltered PCAP, including the initial Hello packets. Done.
 
@@ -381,22 +396,23 @@ Published captures are exported with the display filter `ospf`. The unfiltered P
 - Cross-referencing a device log with a packet capture (here, the `dst-ip` in the log against the destination of the captured DBD) turns a vague message into a testable hypothesis.
 - A neighbor state can change with the DBD master/slave role, which follows the router IDs; record router IDs next to every state screenshot.
 - Start the capture before bringing the link up: the initial Hello packets are only visible if the capture is already running, and a vendor may ask for the unfiltered file.
+- **Reading an RFC:** use the HTML version (clickable cross-references), isolate the exact sentence that applies, note its keywords and scope (for example "physical point-to-point networks" and "always"), then search the document for related terms and sections. Check who a rule applies to: RFC 2328 §8.1 governs how packets are sent, §8.2 how they are accepted.
 
 ## 10. References and Next Steps
 
 **References:**
-- RFC 2328 — OSPF Version 2
+- RFC 2328 — OSPF Version 2 (sections 8.1 and 8.2)
 - Cisco IOS XE OSPF documentation
 - Grandstream GWN7822P documentation
 - Grandstream technical support ticket (private)
 
 **Next steps:**
-- Review the Grandstream response to the unfiltered capture.
-- Confirm that `NetworkMask mismatch` is still logged with router ID 10.255.255.255.
-- Test any recommended configuration change or firmware correction.
-- Apply the Broadcast workaround to VLAN 251 / DC2 if the link is needed.
+- Review Grandstream's answer to the RFC 2328 §8.2 question and the `NetworkMask mismatch` message.
+- Capture the Cisco-to-Cisco P2P link (DC1 ↔ DC2) to see how Cisco sends DBD packets between two Cisco devices.
+- Test the new firmware when released.
+- Apply the Broadcast configuration to VLAN 251 / DC2 if the link is needed.
 - Update the report only when new evidence is available.
 
 ---
 
-**Final status: OPEN — Workaround validated — Root cause unconfirmed — Vendor investigation pending.**
+**Final status: OPEN — Workaround validated — Cause identified by vendor (not independently verified) — Firmware adjustment planned, no ETA.**
